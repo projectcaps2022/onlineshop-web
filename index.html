@@ -2,20 +2,32 @@
 <html>
   <head>
     <script type="text/javascript" src="./src/javascript/openconnection.js">
-
+        
     </script>
+    <script src="https://download.playfab.com/PlayFabClientApi.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="./src/javascript/sql-wasm.js"></script>
+    <script>
+        // Load sql.js WebAssembly file
+        let config = {
+          locateFile: function(){ "./src/wasm/sql-wasm.wasm"},
+        };
+        initSqlJs(config).then(function (SQL) {
+            console.log("sql.js initialized 🎉");
+        });
+      </script>
     <title>A Simple HTML Page</title>
   </head>
   <body>
 
-    <h1>My HTML Page</h2>
+    <h1>My HTML Page</h1>
         <input type="button" onclick="gettest()" value="get">
 
         <form method="post">
             <input type="text" id="id">
             <input type="date" id="created_at">
 
-            <input type="button" onclick="settest('id','created_at','created_at')" value="insert">
+            <input type="button" onclick="settest('id','created_at','created_at');" value="insert">
         </form>
         <div id="result">
 
