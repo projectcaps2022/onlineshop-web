@@ -1,4 +1,5 @@
 
+
 function gettest(){
     try{
 var connection = new ActiveXObject("ADODB.Connection") ;

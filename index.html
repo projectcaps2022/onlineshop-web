@@ -1,21 +1,24 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <script type="text/javascript" src="./src/javascript/openconnection.js">
-        
+      
+      <script src="https://download.playfab.com/PlayFabClientApi.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+      <script type="text/javascript" src="./src/javascript/sql-wasm.js"></script>
+      <script>
+          // Load sql.js WebAssembly file
+          let config = {
+        locateFile: ()=>{ "https://sql.js.org/dist/sql-wasm.wasm"},
+    };
+    console.log(config)
+
+    initSqlJs(config).then(function () {
+    
+        console.log("sql.js initialized 🎉");
+    });
+</script>
+<script type="text/javascript" src="./src/javascript/openconnection.js">
     </script>
-    <script src="https://download.playfab.com/PlayFabClientApi.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script type="text/javascript" src="./src/javascript/sql-wasm.js"></script>
-    <script>
-        // Load sql.js WebAssembly file
-        let config = {
-          locateFile: function(){ "./src/wasm/sql-wasm.wasm"},
-        };
-        initSqlJs(config).then(function (SQL) {
-            console.log("sql.js initialized 🎉");
-        });
-      </script>
     <title>A Simple HTML Page</title>
   </head>
   <body>
