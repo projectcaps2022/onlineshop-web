@@ -66,7 +66,7 @@ function settest(id,created_at,updated_at){
     gettest() 
 }
 
-function deletetest(id){
+function deletetestd(id){
     try{
     var connection = new ActiveXObject("ADODB.Connection") ;
 }catch(err){
@@ -111,4 +111,96 @@ function testSQLJS() {
         var row = stmt.getAsObject();
         // [...] do something with the row of result
     }
+
+
+}
+function testXMLREQUEST(){
+    let xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "https://texteditor.co/61e30f55-298e-42e1-a056-75a8c7da2441", true);
+    
+    xhr.setRequestHeader('Content-Type', "text/plain");
+    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+    xhr.setRequestHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT, DELETE');
+    xhr.setRequestHeader('Access-Control-Allow-Headers', 'Origin, Content-Type, Accept, Authorization, X-Request-With');
+    xhr.send()
+    
+
+    xhr.onload = function() {
+        
+        console.log(xhr.response);
+    document.getElementById('result').innerHTML = (xhr.response);
+
+      };
+      
+      xhr.onerror = function() { // only triggers if the request couldn't be made at all
+        alert(`Network Error`);
+      };
+      
+      xhr.onprogress = function(event) { // triggers periodically
+        // event.loaded - how many bytes downloaded
+        // event.lengthComputable = true if the server sent Content-Length header
+        // event.total - total number of bytes (if lengthComputable)
+        alert(`Received ${event.loaded} of ${event.total}`);
+      };
+
+
+      
+}
+
+function getData() {
+    var a ;  
+    fetch('https://script.google.com/macros/s/AKfycbyE6RT2t_A84NuOvaVTxLmP46hJjMu86VSqlU6kXvcC41oCYzcd5h9GmWCfhN_Ottwg/exec', {
+        method: 'GET'
+      })
+      .then((response) => {
+
+          a = response.clone();
+          alert("Response!");
+
+          var text = ''
+            a.json().then((data) => {
+                    console.log(data)
+                for (let index = 1; index < data.row.length; index++) {
+                    const element = data.row[index];
+                    text+='<p> Date: '+ element[0]+' , Email: '+ element[1]+' Name: '+element[2]+' </p> <input type="button" value="deltete item: '+element[2]+'" onclick="deletetest('+"'"+element[1]+"'"+')" text="delete item">';
+              
+                      }
+          
+          
+                      document.getElementById('result').innerHTML = (text);
+                      return 0;
+            }
+            )
+          
+      
+        
+      });
+
+     
+
+}
+
+function deletetest(email) {
+    text= '<input name="email" type="text" placeholder="email" value="'+email+'" style="display: none" required>';
+    const form = document.getElementById('my-form');
+
+    form.insertAdjacentHTML( 'beforeend', text );
+
+
+        const data = new FormData(form);
+          console.log(data);
+          const action = 'https://script.google.com/macros/s/AKfycbwo5ox7DOnJ-61N10M0TWPxbp4zPYZDoYuwTDdjTcYqiRYKFNs_MlqNmt97p8fR87Z5/exec';
+           fetch(action, {
+            method: 'POST',
+            body: data,
+          })
+          .then((response) => {
+            console.log(response.text())
+            alert("Success!");
+            getData()
+            document.getElementsByName('email').setAttribute("name","insert");
+            return 0;
+          })
+
 }
