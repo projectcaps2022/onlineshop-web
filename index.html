@@ -5,8 +5,11 @@
     <script src="https://download.playfab.com/PlayFabClientApi.js"></script>
       <script type="text/javascript" src="./src/javascript/sql-wasm.js"></script>
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <script type="text/javascript" src="./src/javascript/openconnection.js">
+        $("#result").load("./src/html/gdrivefragment.html");
+        </script>
       <script>
-
+        getData()
         window.addEventListener("load", function() {
         const form = document.getElementById('my-form');
         form.addEventListener("submit", function(e) {
@@ -27,9 +30,7 @@
       });
       
       </script>
-<script type="text/javascript" src="./src/javascript/openconnection.js">
-    $("#result").load("./src/html/gdrivefragment.html");
-    </script>
+
     <title>A Simple HTML Page</title>
   </head>
   <body>
