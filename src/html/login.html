@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Material Design for Bootstrap</title>
+    <title>Login</title>
     <!-- MDB icon -->
     <link rel="icon" href="../images/mdb-favicon.ico" type="image/x-icon" />
     <!-- Font Awesome -->
@@ -38,13 +38,13 @@
                     <p>Please login to your account</p>
   
                     <div class="form-outline mb-4">
-                      <input type="email" id="Email" class="form-control" placeholder="email address"/>
-                      <label class="form-label" for="form2Example11">Username</label>
+                      <input type="email" id="LogEmail" class="form-control" placeholder="Username"/>
+                      <label class="form-label" for="LogEmail">Username</label>
                     </div>
   
                     <div class="form-outline mb-4">
-                      <input type="password" id="form2Example22" class="form-control" />
-                      <label class="form-label" for="form2Example22">Password</label>
+                      <input type="password" id="LogPassword" class="form-control" />
+                      <label class="form-label" for="LogPassword">Password</label>
                     </div>
   
                     <div class="text-center pt-1 mb-5 pb-1">
@@ -80,35 +80,83 @@
               <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form>
+                <form id="form-register">
                     <div class="mb-3">
-                      <label for="recipient-email" class="col-form-label">Email:</label>
-                      <input type="email" class="form-control" id="recipient-email" />
+                      <label for="Name" class="col-form-label">Name:</label>
+                      <input type="text" class="form-control" name="Name" id="Name" required />
+
+                      <label for="Lastname" class="col-form-label">Lastname:</label>
+                      <input type="text" class="form-control" name="Lastname" id="Lastname" required />
+
+
+                      <label for="Username" class="col-form-label">Username:</label>
+                      <input type="text" class="form-control" name="Username" id="Username" required />
+
+                      <label for="Email" class="col-form-label">Email:</label>
+                      <input type="mail" class="form-control" name="Email" id="Email" required />
                       
-                      <label for="recipient-name" class="col-form-label">Username:</label>
-                      <input type="text" class="form-control" id="recipient-name" />
 
-                      <label for="recipient-pass" class="col-form-label">Password:</label>
-                      <input type="password" class="form-control" id="recipient-pass" />
+                      <label for="Password" class="col-form-label">Password:</label>
+                      <input type="password" class="form-control" name="Password" id="Password" required />
 
-                      <label for="recipient-pass-conf" class="col-form-label">Confirm Password:</label>
-                      <input type="password" class="form-control" id="recipient-pass-conf" />
+                      
+
+                      <label for="ConfirmPassword" class="col-form-label">Confirm Password:</label>
+                      <input type="password" class="form-control" id="ConfirmPassword" />
                     </div>
                   </form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-primary" onclick="register()" data-mdb-dismiss="modal">Register</button>
             </div>
           </div>
         </div>
       </div>
+      <!-- Modal -->
+<div class="modal fade" id="modallog" tabindex="-1" aria-labelledby="modallog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalloglLabel">Loggin...</h5>
+      </div>
+      <div id="divbody" class="modal-body">
+        <div class="d-flex justify-content-center">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modalreg" tabindex="-1" aria-labelledby="modallog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalloglLabel">Registering...</h5>
+      </div>
+      <div id="divbodyreg" class="modal-body">
+        <div class="d-flex justify-content-center">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
   </section>
 
     <!-- End your project here-->
 
     <!-- MDB -->
     <script type="text/javascript" src="../javascript/mdb.min.js"></script>
+    <script type="text/javascript" src="../javascript/jquery.js"></script>
     <script type="text/javascript" src="../javascript/auth.js"></script>
     <!-- Custom scripts -->
     <script type="text/javascript"></script>

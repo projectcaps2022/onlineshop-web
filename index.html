@@ -1,67 +1,132 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-      
-    <script src="https://download.playfab.com/PlayFabClientApi.js"></script>
-      <script type="text/javascript" src="./src/javascript/sql-wasm.js"></script>
-      <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-      <script type="text/javascript" src="./src/javascript/openconnection.js">
-        $("#result").load("./src/html/gdrivefragment.html");
-        </script>
-      <script>
-        getData()
-        window.addEventListener("load", function() {
-        const form = document.getElementById('my-form');
-        form.addEventListener("submit", function(e) {
-          e.preventDefault();
-          const data = new FormData(form);
-          console.log(data);
-          const action = e.target.action;
-           fetch(action, {
-            method: 'POST',
-            body: data,
-          })
-          .then((response) => {
-            console.log(response.text())
-            getData()
-            alert("Success!");
-          })
-        });
-      });
-      
-      </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Login</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="./src/images/mdb-favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    />
+    <!-- MDB -->
+    <link rel="stylesheet" href="./src/css/mdb.min.css" />
+    <link rel="stylesheet" href="./src/css/custom.css" />
+    <script type="text/javascript" src="./src/javascript/guard.js"></script>
 
-    <title id="top">A Simple HTML Page</title>
-    <div id="user"></div>
   </head>
   <body>
 
-    <h1>My HTML Page</h1>
-        <input type="button" onclick="getData()" value="get">
-
-        <form 
-            id="my-form"
-            method="POST" 
-            action="https://script.google.com/macros/s/AKfycbyE6RT2t_A84NuOvaVTxLmP46hJjMu86VSqlU6kXvcC41oCYzcd5h9GmWCfhN_Ottwg/exec"
+    <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Toggle button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+  
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Navbar brand -->
+        <a class="navbar-brand mt-2 mt-lg-0" href="#">
+          <img
+            src="./src/images/OIP.MWta5-jpMDCJqqExJLY8QQHaHa.jpg"
+            height="15"
+            alt="MDB Logo"
+            loading="lazy"
+          />
+        </a>
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Start</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">My Orders</a>
+          </li>
+        </ul>
+        <!-- Left links -->
+      </div>
+      <!-- Collapsible wrapper -->
+  
+      <!-- Right elements -->
+      <div class="d-flex align-items-center">
+          <!--User-->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li id="user" class="nav-item">
+              <a class="nav-link" href="#">My Purshased</a>
+              <script>
+                    document.getElementById('user').innerHTML = '<a class="nav-link" href="#"> Welcome, '+localStorage.getItem('user')+'</a>'
+              </script>
+            </li>
+          </ul>
+        <!-- Icon -->
+        <a class="text-reset me-3" href="#">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="badge rounded-pill badge-notification bg-danger">5</span>
+        </a>
+        
+        
+        <!-- Avatar -->
+        <div class="dropdown">
+          <a
+            class="dropdown-toggle d-flex align-items-center hidden-arrow"
+            href="#"
+            id="navbarDropdownMenuAvatar"
+            role="button"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
           >
-          <input name="Email" type="email" placeholder="Email" required>
-          <input name="Name" type="text" placeholder="Name" required>
-          <button type="submit">Send</button>
-      </form>
-        <div id="result">
-
+            <img
+              src="./src/images/OIP.Ghae4OEdb4UmC3hkqpFvLAHaGd.jpg"
+              class="rounded-circle"
+              height="25"
+              alt="Black and White Portrait of a Man"
+              loading="lazy"
+            />
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="navbarDropdownMenuAvatar"
+          >
+            <li>
+              <a class="dropdown-item" href="#">My profile</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="./src/html/login.html" onclick="localStorage.removeItem('user')">Logout</a>
+            </li>
+          </ul>
         </div>
-    </body>
-    <script>
-       let search = window.location.search
-        console.log(search)
+        
+      </div>
+      <!-- Right elements -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+    <!-- End your project here-->
 
-        if(!search){
-         window.location = "./src/html/login.html";
-        }else{
-          var email = atob(search.split("=")[1])
-          localStorage.setItem('user',email) 
-          document.getElementById('user').innerHTML= "<p>Welcome To Your Shop: "+ email+"<p>"
-        }
-    </script>
+    <!-- MDB -->
+    <script type="text/javascript" src="./src/javascript/mdb.min.js"></script>
+    <script type="text/javascript" src="./src/javascript/auth.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
+  </body>
 </html>
