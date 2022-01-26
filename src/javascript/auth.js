@@ -1,6 +1,12 @@
 
 
 function login(){
+
+
+
+    //const forms = document.querySelectorAll('.needs-validation');
+   
+
     let url = "https://script.google.com/macros/s/AKfycbxob0Jli4eELhxxcU8KCrOYFzN81_FI6zm74hRbcTCAUfHPOU1jpQWI45eHFY_jL5Ge/exec"
 
     const myModalEl = document.getElementById('modallog')
@@ -55,6 +61,18 @@ function login(){
 }
 
 function register(){
+    let err = document.getElementById('modalerr')
+    let mod = new mdb.Modal(err)
+    let pass = document.getElementById('Password').value
+    let cpass = document.getElementById('ConfirmPassword').value
+
+    if(pass!==cpass){
+        mod.show()
+        return 0
+    }
+    //exampleModal
+   
+
     let url = "https://script.google.com/macros/s/AKfycbyBkAeX1EZSS7NKaHS_k0NuwHZ5-5DyB1PEd25vnP5eIKjSflbc7Wh0uYJmfwdcLjQI/exec"
     const form = document.getElementById('form-register');
     const data = new FormData(form);

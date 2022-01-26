@@ -34,17 +34,19 @@
                     <h4 class="mt-1 mb-5 pb-1">Online Shopping</h4>
                   </div>
   
-                  <form>
+                  <form class="needs-validation" id="logform">
                     <p>Please login to your account</p>
   
                     <div class="form-outline mb-4">
-                      <input type="email" id="LogEmail" class="form-control" placeholder="Username"/>
+                      <input type="email" id="LogEmail" class="form-control" placeholder="Username" required/>
                       <label class="form-label" for="LogEmail">Username</label>
+                      <div class="invalid-feedback">Please choose a username.</div>
                     </div>
   
                     <div class="form-outline mb-4">
-                      <input type="password" id="LogPassword" class="form-control" />
+                      <input type="password" id="LogPassword" class="form-control" required/>
                       <label class="form-label" for="LogPassword">Password</label>
+                      <div class="invalid-feedback">Please choose a password.</div>
                     </div>
   
                     <div class="text-center pt-1 mb-5 pb-1">
@@ -143,6 +145,24 @@
           <div class="spinner-border" role="status">
             <span class="visually-hidden">Loading...</span>
           </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modalerr" tabindex="-1" aria-labelledby="modalerr" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalloglLabel">Error</h5>
+      </div>
+      <div id="divbodyerr" class="modal-body">
+        <div class="d-flex justify-content-center">
+         
+            <p>Passwords doesn't match. Check your password</p>
+         
         </div>
       </div>
       <div class="modal-footer">
