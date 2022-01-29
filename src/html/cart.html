@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Login</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="../images/mdb-favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    />
+    <!-- MDB -->
+    <link rel="stylesheet" href="../css/mdb.min.css" />
+    <link rel="stylesheet" href="../css/custom.css" />
+    <script type="text/javascript" src="../javascript/guardcart.js"></script>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+          <!-- Toggle button -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+      
+          <!-- Collapsible wrapper -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Navbar brand -->
+            <a class="navbar-brand mt-2 mt-lg-0" href="#">
+              <img
+                src="../images/OIP.MWta5-jpMDCJqqExJLY8QQHaHa.jpg"
+                height="15"
+                alt="MDB Logo"
+                loading="lazy"
+              />
+            </a>
+            <!-- Left links -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a id="ini" class="nav-link" href="#">Products</a>
+                    <script>
+                    document.getElementById("ini").href = "../../index.html?user="+ btoa(localStorage.getItem('user'))
+                  </script>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Cart</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">My Orders</a>
+              </li>
+            </ul>
+            <!-- Left links -->
+          </div>
+          <!-- Collapsible wrapper -->
+      
+          <!-- Right elements -->
+          <div class="d-flex align-items-center">
+              <!--User-->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li id="user" class="nav-item">
+                  <a class="nav-link" href="#">My Purshased</a>
+                  <script>
+                        document.getElementById('user').innerHTML = '<a class="nav-link" href="#"> Welcome, '+localStorage.getItem('user')+'</a>'
+                  </script>
+                </li>
+              </ul>
+            <!-- Icon -->
+            <a class="text-reset me-3" href="#">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="badge rounded-pill badge-notification bg-danger">5</span>
+            </a>
+            
+            
+            <!-- Avatar -->
+            <div class="dropdown">
+              <a
+                class="dropdown-toggle d-flex align-items-center hidden-arrow"
+                href="#"
+                id="navbarDropdownMenuAvatar"
+                role="button"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  src="../images/OIP.Ghae4OEdb4UmC3hkqpFvLAHaGd.jpg"
+                  class="rounded-circle"
+                  height="25"
+                  alt="Black and White Portrait of a Man"
+                  loading="lazy"
+                />
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="navbarDropdownMenuAvatar"
+              >
+                <li>
+                  <a class="dropdown-item" href="#">My profile</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="../html/login.html" onclick="localStorage.removeItem('user')">Logout</a>
+                </li>
+              </ul>
+            </div>
+            
+          </div>
+          <!-- Right elements -->
+        </div>
+        <!-- Container wrapper -->
+      </nav>
+      <!-- Navbar -->
+      <!--List products-->
+        <section class="vh-100" style="background-color: #c2c2c2;">
+            <div class="container h-100">
+              <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col">
+                  <p><span class="h2">Shopping Cart </span><span class="h4">(3 item in your cart)</span></p>
+          
+                  <div class="card mb-4">
+                    <div class="card-body p-4">
+          
+                      <div class="row align-items-center">
+                        <div class="col-md-2">
+                          <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/1.webp" class="img-fluid" alt="Generic placeholder image">
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-center">
+                          <div>
+                            <p class="small text-muted mb-4 pb-2">Name</p>
+                            <p class="lead fw-normal mb-0">iPad Air</p>
+                          </div>
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-center">
+                          <div>
+                            <p class="small text-muted mb-4 pb-2">Color</p>
+                            <p class="lead fw-normal mb-0"><i class="fas fa-circle me-2" style="color: #fdd8d2;"></i> pink rose</p>
+                          </div>
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-center">
+                          <div>
+                            <p class="small text-muted mb-4 pb-2">Quantity</p>
+                            <p class="lead fw-normal mb-0">1</p>
+                          </div>
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-center">
+                          <div>
+                            <p class="small text-muted mb-4 pb-2">Price</p>
+                            <p class="lead fw-normal mb-0">$799</p>
+                          </div>
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-center">
+                          <div>
+                            <p class="small text-muted mb-4 pb-2">Total</p>
+                            <p class="lead fw-normal mb-0">$799</p>
+                          </div>
+                        </div>
+                      </div>
+          
+                    </div>
+                  </div>
+                  <div class="card mb-4">
+                    <div class="card-body p-4">
+          
+                      <div class="row align-items-center">
+                        <div class="col-md-2">
+                          <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/1.webp" class="img-fluid" alt="Generic placeholder image">
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-center">
+                          <div>
+                            <p class="small text-muted mb-4 pb-2">Name</p>
+                            <p class="lead fw-normal mb-0">iPad Air</p>
+                          </div>
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-center">
+                          <div>
+                            <p class="small text-muted mb-4 pb-2">Color</p>
+                            <p class="lead fw-normal mb-0"><i class="fas fa-circle me-2" style="color: #fdd8d2;"></i> pink rose</p>
+                          </div>
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-center">
+                          <div>
+                            <p class="small text-muted mb-4 pb-2">Quantity</p>
+                            <p class="lead fw-normal mb-0">1</p>
+                          </div>
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-center">
+                          <div>
+                            <p class="small text-muted mb-4 pb-2">Price</p>
+                            <p class="lead fw-normal mb-0">$799</p>
+                          </div>
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-center">
+                          <div>
+                            <p class="small text-muted mb-4 pb-2">Total</p>
+                            <p class="lead fw-normal mb-0">$799</p>
+                          </div>
+                        </div>
+                      </div>
+
+          
+                    </div>
+                  </div>
+<div class="card mb-4">
+                    <div class="card-body p-4">
+          
+                      <div class="row align-items-center">
+                        <div class="col-md-2">
+                          <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/1.webp" class="img-fluid" alt="Generic placeholder image">
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-center">
+                          <div>
+                            <p class="small text-muted mb-4 pb-2">Name</p>
+                            <p class="lead fw-normal mb-0">iPad Air</p>
+                          </div>
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-center">
+                          <div>
+                            <p class="small text-muted mb-4 pb-2">Color</p>
+                            <p class="lead fw-normal mb-0"><i class="fas fa-circle me-2" style="color: #fdd8d2;"></i> pink rose</p>
+                          </div>
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-center">
+                          <div>
+                            <p class="small text-muted mb-4 pb-2">Quantity</p>
+                            <p class="lead fw-normal mb-0">1</p>
+                          </div>
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-center">
+                          <div>
+                            <p class="small text-muted mb-4 pb-2">Price</p>
+                            <p class="lead fw-normal mb-0">$799</p>
+                          </div>
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-center">
+                          <div>
+                            <p class="small text-muted mb-4 pb-2">Total</p>
+                            <p class="lead fw-normal mb-0">$799</p>
+                          </div>
+                        </div>
+                      </div>
+          
+                    </div>
+                  </div>
+          
+                  <div class="card mb-5">
+                    <div class="card-body p-4">
+          
+                      <div class="float-end">
+                        <p class="mb-0 me-5 d-flex align-items-center">
+                          <span class="small text-muted me-2">Order total:</span> <span class="lead fw-normal">$3497</span>
+                        </p>
+                      </div>
+          
+                    </div>
+                  </div>
+          
+                  <div class="d-flex justify-content-end">
+                    <button type="button" class="btn btn-light btn-lg me-2">Continue shopping</button>
+                    <button type="button" class="btn btn-primary btn-lg">Confirm all</button>
+                  </div>
+          
+                </div>
+              </div>
+            </div>
+          </section>
+      <!--End LIst-->
+         <!-- MDB -->
+    <script type="text/javascript" src="../javascript/mdb.min.js"></script>
+    <script type="text/javascript" src="../javascript/auth.js"></script>
+    <script type="text/javascript" src="../javascript/tocart.js"></script>
+    
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
+  </body>
+</html>

@@ -20,10 +20,10 @@
     <script type="text/javascript" src="./src/javascript/guard.js"></script>
 
   </head>
-  <body>
+  <body style="background-color: #f3f1f1;">
 
     <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light ">
     <!-- Container wrapper -->
     <div class="container-fluid">
       <!-- Toggle button -->
@@ -53,10 +53,14 @@
         <!-- Left links -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="#">Start</a>
+            <a class="nav-link" href="#">Products</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Products</a>
+            
+            <a id="cart" class="nav-link" href="./src/html/cart.html">Cart</a>
+            <script>
+              document.getElementById("cart").href = "./src/html/cart.html?user="+ btoa(localStorage.getItem('user'))
+            </script>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">My Orders</a>
@@ -78,9 +82,12 @@
             </li>
           </ul>
         <!-- Icon -->
-        <a class="text-reset me-3" href="#">
+        <a id="btncart" class="text-reset me-3" href="#">
+          <script>
+            document.getElementById("btncart").href = "./src/html/cart.html?user="+ btoa(localStorage.getItem('user'))
+          </script>
           <i class="fas fa-shopping-cart"></i>
-          <span class="badge rounded-pill badge-notification bg-danger">5</span>
+          <span class="badge rounded-pill badge-notification bg-danger">3</span>
         </a>
         
         
@@ -122,11 +129,11 @@
   </nav>
   <!-- Navbar -->
 
-
-    <div class="container mt-5">
-      <div id="carouselBasicExample" class="carousel slide carousel-fade mb-5" data-mdb-ride="carousel">
+  <section class="vh-100 mt-5" style="background-color: #f3f1f1;">
+    <div class="container">
+      <!-- <div id="carouselBasicExample" class="carousel slide carousel-fade mb-5" data-mdb-ride="carousel">
         <!-- Indicators -->
-        <div class="carousel-indicators">
+      <!--  <div class="carousel-indicators">
           <button
             type="button"
             data-mdb-target="#carouselBasicExample"
@@ -150,9 +157,9 @@
         </div>
       
         <!-- Inner -->
-        <div class="carousel-inner">
+      <!--  <div class="carousel-inner">
           <!-- Single item -->
-          <div class="carousel-item active">
+        <!--  <div class="carousel-item active">
             <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(15).webp" class="d-block w-100" alt="Sunset Over the City"/>
             <div class="carousel-caption d-none d-md-block">
               <h5>First slide label</h5>
@@ -161,7 +168,7 @@
           </div>
       
           <!-- Single item -->
-          <div class="carousel-item">
+         <!--  <div class="carousel-item">
             <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(22).webp" class="d-block w-100" alt="Canyon at Nigh"/>
             <div class="carousel-caption d-none d-md-block">
               <h5>Second slide label</h5>
@@ -170,7 +177,7 @@
           </div>
       
           <!-- Single item -->
-          <div class="carousel-item">
+       <!--    <div class="carousel-item">
             <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(23).webp" class="d-block w-100" alt="Cliff Above a Stormy Sea"/>
             <div class="carousel-caption d-none d-md-block">
               <h5>Third slide label</h5>
@@ -181,7 +188,7 @@
         <!-- Inner -->
       
         <!-- Controls -->
-        <button class="carousel-control-prev" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="prev">
+       <!--  <button class="carousel-control-prev" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
@@ -189,7 +196,7 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
-      </div>
+      </div> -->
 
       <!--end carousel-->
 
@@ -199,7 +206,7 @@
           <input type="search" id="form1" class="form-control" />
           <label class="form-label" for="form1">Search</label>
         </div>
-        <button type="button" class="btn btn-primary">
+        <button type="button" class="btn btn-primary gradient-custom-2">
           <i class="fas fa-search"></i>
         </button>
       </div>
@@ -217,8 +224,9 @@
                 additional content. This content is a little bit longer.
               </p>
             </div>
-            <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
+            <div class="card-footer text-center">
+              <button type="button" class="btn btn-outline-primary" data-mdb-ripple-color="dark" style="border-color: #dd3675; color: #dd3675;"onclick="showcart()">Add to Cart</button>
+
             </div>
           </div>
         </div>
@@ -229,8 +237,9 @@
               <h5 class="card-title">Card title</h5>
               <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
             </div>
-            <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
+            <div class="card-footer text-center">
+              <button type="button" class="btn btn-outline-primary" data-mdb-ripple-color="dark" style="border-color: #dd3675; color: #dd3675;" onclick="showcart()">Add to Cart</button>
+
             </div>
           </div>
         </div>
@@ -245,18 +254,49 @@
                 that equal height action.
               </p>
             </div>
-            <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
+            <div class="card-footer text-center">
+              <button type="button" class="btn btn-outline-primary" style="border-color: #dd3675; color: #dd3675;" data-mdb-ripple-color="dark" onclick="showcart()">Add to Cart</button>
             </div>
           </div>
         </div>
       </div>      
     </div>
+    <div class="modal fade right show modal-top-right" id="exampleSideModal1" tabindex="-1" aria-labelledby="exampleSideModal1" aria-modal="true" role="dialog">
+      <div class="modal-dialog modal-side modal-top-right">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white" style="background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);">
+            <h5 class="modal-title" id="exampleSideModal1">Product in the cart</h5>
+            <button type="button" class="btn-close btn-close-white" data-mdb-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-3 text-center">
+                <i class="fas fa-shopping-cart fa-4x" style="color: rgb(196, 62, 89)"></i>
+              </div>
+
+              <div class="col-9">
+                <p>Do you need more time to make a purchase decision?</p>
+                <p>No pressure, your product will be waiting for you in the cart.</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn gradient-custom-2 text-white" >Go to the cart</button>
+            <button type="button" class="btn btn-outline-danger" data-mdb-dismiss="modal" style="">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
     <!-- End your project here-->
 
     <!-- MDB -->
     <script type="text/javascript" src="./src/javascript/mdb.min.js"></script>
     <script type="text/javascript" src="./src/javascript/auth.js"></script>
+    <script type="text/javascript" src="./src/javascript/tocart.js"></script>
+    
     <!-- Custom scripts -->
     <script type="text/javascript"></script>
   </body>
