@@ -128,125 +128,107 @@
     </div>
     <!-- Container wrapper -->
   </nav>
-
-  
   <!-- Navbar -->
-  <div class="container mt-5">
-      <div class="col text-center mb-5">
-          <h1>Categories</h1> 
-           </div>
-      <div class="row row-cols-1 row-cols-md-3 row-cols-sm-3 g-4">
+
+  <section class="vh-100 mt-5" style="background-color: #f3f1f1;">
+    <div class="container">
+
+
+      <!--init seach-->
+      <nav id="showwom" class="navbar navbar-light bg-light mb-3 mt-5">
+        <div class="container-fluid">
+          <a class="navbar-brand">Search</a>
           
-        <div class="col text-center" >
-            <div>
-            <a
-            id="toman"
-            href="./src/html/man.html"
-            role="button"
-            >
-            <script>
-                document.getElementById("toman").href = "./src/html/man.html?user="+ btoa(localStorage.getItem('user'))
-              </script>
-            <img
-              src="./src/images/2.webp"
-              class="rounded-circle"
-              height="250"
-              alt="Black and White Portrait of a Man"
-              loading="lazy"
-            />
-            </a>
-            </div>
-            <div>
-            <h4>Man</h4>
-        </div>  
-        </div>
-        <div class="col text-center" >
-            <div>
-            <a
-            id="towoman"
-            href="#"
-            role="button"
-            >
-            <script>
-              document.getElementById("towoman").href = "./src/html/woman.html?user="+ btoa(localStorage.getItem('user'))
-            </script>
-            <img
-              src="./src/images/OIP.cJ8CEHq7fv6dDn44kDweTgHaHa.jpg"
-              class="rounded-circle"
-              height="250"
-              alt="Black and White Portrait of a Man"
-              loading="lazy"
-            />
-            </a>
-            </div>
-            <div>
-            <h4>Woman</h4>
-        </div>  
-        </div>
-        <div class="col text-center" >
-            <div>
-            <a
-            id="allgen"
-            href="#"
-            role="button"
-            >
-            <script>
-              document.getElementById("allgen").href = "./src/html/all.html?user="+ btoa(localStorage.getItem('user'))
-            </script>
-            <img
-              src="./src/images/OIP.NM_9A_7VL-l8XrXb6PE85AHaEo.jpg"
-              class="rounded-circle"
-              height="250"
-              width="250"
-              alt="Black and White Portrait of a Man"
-              loading="lazy"
-            />
-            </a>
-            </div>
-            <div>
-            <h4>All</h4>
-        </div>  
-        </div>
+          <button type="button" class="btn me-3 gradient-custom-2"  style="color: white;" onclick="getproducts()" >All </button>
+            
+          
+            <button type="button" class="btn me-3 gradient-custom-2" style="color: white;" onclick="getproductsWoman()" >Woman </button>
         
-</div>
-<div class="col text-center mt-5 mb-5">
-    <h1>Featured Products</h1> 
-     </div>
-     <div id="productlist" class="row row-cols-1 row-cols-md-4 row-cols-sm-2 g-4">
+      
+              <button type="button" class="btn me-3 gradient-custom-2" style="color: white;" onclick="getproductsMEn()">Man </button>
+        
+          <form class="d-flex input-group w-auto">
+            <input
+              type="search"
+              class="form-control rounded"
+              placeholder="Search"
+              aria-label="Search"
+              aria-describedby="search-addon"
+            />
+            <span class="input-group-text border-0" id="search-addon">
+              <i class="fas fa-search"></i>
+            </span>
+          </form>
+        </div>
+      </nav>
+     
+      <!--end search-->
+
+
+      <div id="productlist" class="row row-cols-1 row-cols-md-4 row-cols-sm-2 g-4">
         
         
-    </div>      
-</div>
-<div class="modal fade" id="loadingprods" tabindex="-1" aria-labelledby="loadingprods" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalloglLabel">Loading Products...</h5>
-        </div>
-        <div id="divbody" class="modal-body">
-          <div class="d-flex justify-content-center">
-            <div class="spinner-border" role="status">
-              <span class="visually-hidden">Loading...</span>
+      </div>      
+    </div>
+    <div class="modal fade right show modal-top-right" id="exampleSideModal1" tabindex="-1" aria-labelledby="exampleSideModal1" aria-modal="true" role="dialog">
+      <div class="modal-dialog modal-side modal-top-right">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white" style="background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);">
+            <h5 class="modal-title" id="exampleSideModal1">Product in the cart</h5>
+            <button type="button" class="btn-close btn-close-white" data-mdb-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-3 text-center">
+                <i class="fas fa-shopping-cart fa-4x" style="color: rgb(196, 62, 89)"></i>
+              </div>
+
+              <div class="col-9">
+                <p>Do you need more time to make a purchase decision?</p>
+                <p>No pressure, your product will be waiting for you in the cart.</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="modal-footer">
+          <div class="modal-footer">
+            <button type="button" class="btn gradient-custom-2 text-white" >Go to the cart</button>
+            <button type="button" class="btn btn-outline-danger" data-mdb-dismiss="modal" >
+              Close
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+    <div class="modal fade" id="loadingprods" tabindex="-1" aria-labelledby="loadingprods" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalloglLabel">Loading Products...</h5>
+          </div>
+          <div id="divbody" class="modal-body">
+            <div class="d-flex justify-content-center">
+              <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+    <!-- End your project here-->
 
-     <!-- MDB -->
-      <script type="text/javascript" src="./src/javascript/mdb.min.js"></script>
-      <script type="text/javascript" src="./src/javascript/auth.js"></script>
-      <script type="text/javascript" src="./src/javascript/tocart.js"></script>
-      <script type="text/javascript" src="./src/javascript/products.js">
-      </script>
-      <script>
-        getproductsMain()
-      </script>
-      <!-- Custom scripts -->
-      <script type="text/javascript"></script>
-    </body>
-  </html>
-  
+    <!-- MDB -->
+    <script type="text/javascript" src="./src/javascript/mdb.min.js"></script>
+    <script type="text/javascript" src="./src/javascript/auth.js"></script>
+    <script type="text/javascript" src="./src/javascript/tocart.js"></script>
+    <script type="text/javascript" src="./src/javascript/products.js">
+    </script>
+    <script>
+      getproducts()
+    </script>
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
+  </body>
+</html>
