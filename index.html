@@ -21,7 +21,7 @@
     
 
   </head>
-  <body style="background-color: #f3f1f1;">
+  <body >
 
     <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -128,12 +128,20 @@
     </div>
     <!-- Container wrapper -->
   </nav>
-
+<!-- Background image -->
+<div
+  class="bg-image"
+  style="
+    background-image: url('./src/images/R.9b13db1351156f97d2be5f095aaebce7.jpg');
+   
+  "
+>
+<!-- Background image -->
   
   <!-- Navbar -->
   <div class="container mt-5">
       <div class="col text-center mb-5">
-          <h1>Categories</h1> 
+          <h1 class="text-white">Categories</h1> 
            </div>
       <div class="row row-cols-1 row-cols-md-3 row-cols-sm-3 g-4">
           
@@ -149,7 +157,7 @@
               </script>
             <img
               src="./src/images/2.webp"
-              class="rounded-circle"
+              class="rounded-circle hover-shadow"
               height="250"
               alt="Black and White Portrait of a Man"
               loading="lazy"
@@ -157,7 +165,7 @@
             </a>
             </div>
             <div>
-            <h4>Man</h4>
+            <h4 class="text-white">Man</h4>
         </div>  
         </div>
         <div class="col text-center" >
@@ -172,7 +180,7 @@
             </script>
             <img
               src="./src/images/OIP.cJ8CEHq7fv6dDn44kDweTgHaHa.jpg"
-              class="rounded-circle"
+              class="rounded-circle hover-shadow"
               height="250"
               alt="Black and White Portrait of a Man"
               loading="lazy"
@@ -180,7 +188,7 @@
             </a>
             </div>
             <div>
-            <h4>Woman</h4>
+            <h4 class="text-white">Women</h4>
         </div>  
         </div>
         <div class="col text-center" >
@@ -195,7 +203,7 @@
             </script>
             <img
               src="./src/images/OIP.NM_9A_7VL-l8XrXb6PE85AHaEo.jpg"
-              class="rounded-circle"
+              class="rounded-circle hover-shadow"
               height="250"
               width="250"
               alt="Black and White Portrait of a Man"
@@ -204,18 +212,19 @@
             </a>
             </div>
             <div>
-            <h4>All</h4>
+            <h4 class="text-white">All</h4>
         </div>  
         </div>
         
 </div>
 <div class="col text-center mt-5 mb-5">
-    <h1>Featured Products</h1> 
+    <h1 class="text-white">Featured Products</h1> 
      </div>
      <div id="productlist" class="row row-cols-1 row-cols-md-4 row-cols-sm-2 g-4">
         
         
     </div>      
+</div>
 </div>
 <div class="modal fade" id="loadingprods" tabindex="-1" aria-labelledby="loadingprods" aria-hidden="true">
     <div class="modal-dialog">
@@ -235,7 +244,82 @@
       </div>
     </div>
   </div>
+  <div class="modal fade" id="prodid" tabindex="-1" aria-labelledby="prodid" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalloglLabel">Product Detail</h5>
+        </div>
+        <div id="divbody" class="modal-body">
+          <div class="d-flex justify-content-center" id="carddetail">
+            <div class="card text-black">
+              <img src="./src/images/22241227-1-multi.webp" class="card-img-top" alt="..."> 
+              <div class="card-body"> 
+                <div class="text-center">
+                  <h5 class="card-title">leaf beach shirt</h5>
+                  <p class="text-muted mb-4">French Connection leaf beach shirt in marine and salt</p>
+                </div>
+                <div>
+                  <div class="d-flex justify-content-between">
+                     <span>Category</span>
+                     <span>Men</span>
+                    </div> 
+                    <div class="d-flex justify-content-between">
+                      <span>Color</span>
+                      <span>Multi</span>
+                     </div> 
+                     <div class="d-flex justify-content-between">
+                       <span>Dress</span>
+                       <span>Shirts</span> 
+                      </div> 
+                      <div class="d-flex justify-content-between">
+                        <span>Rating</span>
+                        <i class="fa-star fa-sm fas active" style="color: #FBD20E;">5</i>
+                       </div>
+                      </div> 
+                      <div class="d-flex justify-content-between total font-weight-bold mt-4"> 
+                        <span>Price</span>
+                        <span>$100.00</span></div>
+                       </div>
+                       <div class="card-footer text-center"> 
+                         <button type="button" class="btn btn-outline-primary ripple-surface-dark" data-mdb-ripple-color="dark" style="border-color: rgb(221, 54, 117); color: rgb(221, 54, 117);" 
+                         onclick="showdetails()">
+                         Add to Cart</button>
+                         </div>
+                        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade right show modal-top-right" id="exampleSideModal1" tabindex="-1" aria-labelledby="exampleSideModal1" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-side modal-top-right">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white" style="background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);">
+          <h5 class="modal-title" id="exampleSideModal1">Product in the cart</h5>
+          <button type="button" class="btn-close btn-close-white" data-mdb-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-3 text-center">
+              <i class="fas fa-shopping-cart fa-4x" style="color: rgb(196, 62, 89)"></i>
+            </div>
 
+            <div class="col-9">
+              <p>Do you need more time to make a purchase decision?</p>
+              <p>No pressure, your product will be waiting for you in the cart.</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn gradient-custom-2 text-white" >Go to the cart</button>
+          <button type="button" class="btn btn-outline-danger" data-mdb-dismiss="modal" >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
      <!-- MDB -->
       <script type="text/javascript" src="./src/javascript/mdb.min.js"></script>
       <script type="text/javascript" src="./src/javascript/auth.js"></script>
