@@ -138,21 +138,15 @@
       <nav id="showwom" class="navbar navbar-light bg-light mb-3">
         <div class="container-fluid">
           <a class="navbar-brand">Search</a>
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" onclick="getproducts()" href="#">All</a>
-            </li>
-          </ul>
-          <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" onclick="getproductsWoman()" href="#">Woman</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" onclick="getproductsMEn()" href="#">Man</a>
-        </li>
-      </ul>
+          
+          <button type="button" class="btn me-3 gradient-custom-2"  style="color: white;" onclick="getproducts()" >All </button>
+            
+          
+            <button type="button" class="btn me-3 gradient-custom-2" style="color: white;" onclick="getproductsWoman()" >Woman </button>
+        
+      
+              <button type="button" class="btn me-3 gradient-custom-2" style="color: white;" onclick="getproductsMEn()">Man </button>
+        
           <form class="d-flex input-group w-auto">
             <input
               type="search"
