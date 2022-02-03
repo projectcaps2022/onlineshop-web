@@ -23,7 +23,7 @@ function getproductsMEn(){
 
 
 
-    let url = "https://script.google.com/macros/s/AKfycbykIiDHELoKG7uGBrcRboxo9JodDV7KR9MRO_HufNr3J61Vy3AObD7ZNfIO3KrzzAtz/exec"
+    let url = "https://script.google.com/macros/s/AKfycbz8OORg1A70boTo59HWIWYcgc_9S9Pf32_6OxnlaBNsKtgk91v3d4nQH8EFg3-pOCl9/exec"
   
     var a ;  
     fetch(url, {

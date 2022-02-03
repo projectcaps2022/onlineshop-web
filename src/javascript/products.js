@@ -6,28 +6,8 @@ function getproducts(){
     const prodmod = document.getElementById('loadingprods')
     const modalp = new mdb.Modal(prodmod)
     modalp.show()
-    
-    // <ul class="rating" data-mdb-toggle="rating" data-mdb-readonly="true" data-mdb-value="3">
-    //     <li>
-    //       <i class="fa-star fa-sm text-primary fas active"></i>
-    //     </li>
-    //     <li>
-    //       <i class="fa-star fa-sm text-primary fas active"></i>
-    //     </li>
-    //     <li>
-    //       <i class="fa-star fa-sm text-primary fas active"></i>
-    //     </li>
-    //     <li>
-    //       <i class="far fa-star fa-sm text-primary"></i>
-    //     </li>
-    //     <li>
-    //       <i class="far fa-star fa-sm text-primary"></i>
-    //     </li>
-    //   </ul>
 
-
-
-    let url = "https://script.google.com/macros/s/AKfycbykIiDHELoKG7uGBrcRboxo9JodDV7KR9MRO_HufNr3J61Vy3AObD7ZNfIO3KrzzAtz/exec"
+    let url = "https://script.google.com/macros/s/AKfycbz8OORg1A70boTo59HWIWYcgc_9S9Pf32_6OxnlaBNsKtgk91v3d4nQH8EFg3-pOCl9/exec"
   
     var a ;  
     fetch(url, {
@@ -61,6 +41,8 @@ function getproducts(){
                     ' <i class="far fa-star fa-sm text-primary"></i> '+
                     ' </li> '+
                     '</ul>'
+                    localStorage.setItem('products', JSON.stringify(data.row))
+
                     
                     for (let index = 1; index < data.row.length; index++) {
                        const element = data.row[index];
@@ -78,7 +60,15 @@ function getproducts(){
                     }
                          modalp.hide()
 
-                    divproduct.innerHTML = texthtmlprod
+                         divproduct.style.opacity = 0;
+
+                         setTimeout(function(){ 
+                            // Load new content
+                            // Fade in
+                            divproduct.innerHTML = texthtmlprod
+                            divproduct.style.opacity = 1;
+                           
+                         },500);
                }
             )
           
@@ -183,7 +173,7 @@ function getproductsMain(){
    modalp.show()
    
 
-   let url = "https://script.google.com/macros/s/AKfycbykIiDHELoKG7uGBrcRboxo9JodDV7KR9MRO_HufNr3J61Vy3AObD7ZNfIO3KrzzAtz/exec"
+   let url = "https://script.google.com/macros/s/AKfycbz8OORg1A70boTo59HWIWYcgc_9S9Pf32_6OxnlaBNsKtgk91v3d4nQH8EFg3-pOCl9/exec"
  
    var a ;  
    fetch(url, {
@@ -209,6 +199,7 @@ function getproductsMain(){
 
                   const listed = listtoorder.slice(0, 5);
 
+                  localStorage.setItem('productsmain', JSON.stringify(data.row))
 
                    for (let index = 1; index < listed.length; index++) {
                        var indexed = listed[index];
@@ -228,7 +219,15 @@ function getproductsMain(){
                    }
                         modalp.hide()
 
-                   divproduct.innerHTML = texthtmlprod
+                        divproduct.style.opacity = 0;
+
+                        setTimeout(function(){ 
+                           // Load new content
+                           // Fade in
+                           divproduct.innerHTML = texthtmlprod
+                           divproduct.style.opacity = 1;
+                          
+                        },500);
               }
            )
          
@@ -242,17 +241,239 @@ function showProdTopAndAddtoPath(){
    var text = ' <li class="breadcrumb-item active"><a href="#">Top</a></li>'
    breadcumb.insertAdjacentHTML('beforeend',text)
    changeType('TOP')
+   var texthtmlprod = ''
+   const divproduct = document.getElementById("productlist")
+   var localdata = JSON.parse(localStorage.getItem('products'))
+
+  
+   for (let index = 1; index < localdata.length; index++) {
+      const element = localdata[index];
+     if(element[9]==='Top'){
+      var strArray = element[5].split("/");
+     
+      //localStorage.setItem(element[8], JSON.stringify(element))
+     
+      texthtmlprod+= '<div class="col"><div class="card text-black h-100"><img src="'+'../images/'+strArray[strArray.length-1]+'" class="card-img-top hover-shadow" alt="..." onclick="showdetails('+element[8]+',true)" /> <div class="card-body"> <div class="text-center">'+
+      '<h5 class="card-title">'+element[0]+'</h5>'+
+      '<p class="text-muted mb-4">'+element[3]+'</p>'
+    +'</div>'+
+     ' </div>'+
+     '</div>'+
+     '</div>'
+      
+     }
+   }
+       divproduct.style.opacity = 0;
+
+   setTimeout(function(){ 
+      // Load new content
+      // Fade in
+      divproduct.innerHTML = texthtmlprod
+      divproduct.style.opacity = 1;
+     
+   },500);
+  
 }
 function showProdBottomAndAddtoPath(){
    var breadcumb = document.getElementById('addtolist')
-   var text = ' <li class="breadcrumb-item active"><a href="#">Bottom</a></li>'
+   var text = ' <li class="breadcrumb-item active"><a  role="button">Bottom</a></li>'
    breadcumb.insertAdjacentHTML('beforeend',text)
    changeType('BOTTOM')
+   var texthtmlprod = ''
+   const divproduct = document.getElementById("productlist")
+
+   var localdata = JSON.parse(localStorage.getItem('products'))
+
+
+   for (let index = 1; index < localdata.length; index++) {
+      const element = localdata[index];
+     if(element[9]==='Bottom'){
+      var strArray = element[5].split("/");
+     
+   //   localStorage.setItem(element[8], JSON.stringify(element))
+     
+      texthtmlprod+= '<div class="col"><div class="card text-black h-100"><img src="'+'../images/'+strArray[strArray.length-1]+'" class="card-img-top hover-shadow" alt="..." onclick="showdetails('+element[8]+',true)" /> <div class="card-body"> <div class="text-center">'+
+      '<h5 class="card-title">'+element[0]+'</h5>'+
+      '<p class="text-muted mb-4">'+element[3]+'</p>'
+    +'</div>'+
+     ' </div>'+
+     '</div>'+
+     '</div>'
+      
+     }
+   }
+   divproduct.style.opacity = 0;
+
+   setTimeout(function(){ 
+      // Load new content
+      // Fade in
+      divproduct.innerHTML = texthtmlprod
+      divproduct.style.opacity = 1;
+     
+   },500);
+
 }
 
+function showProdShirtAndAddtoPath(){
+//    var breadcumb = document.getElementById('addtolist')
+//   // var text = ' <li class="breadcrumb-item active"><a  role="button">Bottom</a></li>'
+//    breadcumb.insertAdjacentHTML('beforeend',text)
+ //  changeType('BOTTOM')
+   var texthtmlprod = ''
+   const divproduct = document.getElementById("productlist")
+
+   var localdata = JSON.parse(localStorage.getItem('products'))
+
+
+   for (let index = 1; index < localdata.length; index++) {
+      const element = localdata[index];
+     if(element[2]==='Shirts'){
+      var strArray = element[5].split("/");
+     
+   //   localStorage.setItem(element[8], JSON.stringify(element))
+     
+      texthtmlprod+= '<div class="col"><div class="card text-black h-100"><img src="'+'../images/'+strArray[strArray.length-1]+'" class="card-img-top hover-shadow" alt="..." onclick="showdetails('+element[8]+',true)" /> <div class="card-body"> <div class="text-center">'+
+      '<h5 class="card-title">'+element[0]+'</h5>'+
+      '<p class="text-muted mb-4">'+element[3]+'</p>'
+    +'</div>'+
+     ' </div>'+
+     '</div>'+
+     '</div>'
+      
+     }
+   }
+   divproduct.style.opacity = 0;
+
+   setTimeout(function(){ 
+      // Load new content
+      // Fade in
+      divproduct.innerHTML = texthtmlprod
+      divproduct.style.opacity = 1;
+     
+   },500);
+
+}
+function showProdPantAndAddtoPath(){
+   //    var breadcumb = document.getElementById('addtolist')
+   //   // var text = ' <li class="breadcrumb-item active"><a  role="button">Bottom</a></li>'
+   //    breadcumb.insertAdjacentHTML('beforeend',text)
+    //  changeType('BOTTOM')
+      var texthtmlprod = ''
+      const divproduct = document.getElementById("productlist")
+   
+      var localdata = JSON.parse(localStorage.getItem('products'))
+   
+   
+      for (let index = 1; index < localdata.length; index++) {
+         const element = localdata[index];
+        if(element[2]==='Pants'){
+         var strArray = element[5].split("/");
+        
+      //   localStorage.setItem(element[8], JSON.stringify(element))
+        
+         texthtmlprod+= '<div class="col"><div class="card text-black h-100"><img src="'+'../images/'+strArray[strArray.length-1]+'" class="card-img-top hover-shadow" alt="..." onclick="showdetails('+element[8]+',true)" /> <div class="card-body"> <div class="text-center">'+
+         '<h5 class="card-title">'+element[0]+'</h5>'+
+         '<p class="text-muted mb-4">'+element[3]+'</p>'
+       +'</div>'+
+        ' </div>'+
+        '</div>'+
+        '</div>'
+         
+        }
+      }
+      divproduct.style.opacity = 0;
+   
+      setTimeout(function(){ 
+         // Load new content
+         // Fade in
+         divproduct.innerHTML = texthtmlprod
+         divproduct.style.opacity = 1;
+        
+      },500);
+   
+   }
+
+   function showProdSweatersAndAddtoPath(){
+      //    var breadcumb = document.getElementById('addtolist')
+      //   // var text = ' <li class="breadcrumb-item active"><a  role="button">Bottom</a></li>'
+      //    breadcumb.insertAdjacentHTML('beforeend',text)
+       //  changeType('BOTTOM')
+         var texthtmlprod = ''
+         const divproduct = document.getElementById("productlist")
+      
+         var localdata = JSON.parse(localStorage.getItem('products'))
+      
+      
+         for (let index = 1; index < localdata.length; index++) {
+            const element = localdata[index];
+           if(element[2]==='Sweaters'){
+            var strArray = element[5].split("/");
+           
+         //   localStorage.setItem(element[8], JSON.stringify(element))
+           
+            texthtmlprod+= '<div class="col"><div class="card text-black h-100"><img src="'+'../images/'+strArray[strArray.length-1]+'" class="card-img-top hover-shadow" alt="..." onclick="showdetails('+element[8]+',true)" /> <div class="card-body"> <div class="text-center">'+
+            '<h5 class="card-title">'+element[0]+'</h5>'+
+            '<p class="text-muted mb-4">'+element[3]+'</p>'
+          +'</div>'+
+           ' </div>'+
+           '</div>'+
+           '</div>'
+            
+           }
+         }
+         divproduct.style.opacity = 0;
+      
+         setTimeout(function(){ 
+            // Load new content
+            // Fade in
+            divproduct.innerHTML = texthtmlprod
+            divproduct.style.opacity = 1;
+           
+         },500);
+      
+      }
+
+      function showProdShortAndAddtoPath(){
+         //    var breadcumb = document.getElementById('addtolist')
+         //   // var text = ' <li class="breadcrumb-item active"><a  role="button">Bottom</a></li>'
+         //    breadcumb.insertAdjacentHTML('beforeend',text)
+          //  changeType('BOTTOM')
+            var texthtmlprod = ''
+            const divproduct = document.getElementById("productlist")
+         
+            var localdata = JSON.parse(localStorage.getItem('products'))
+         
+         
+            for (let index = 1; index < localdata.length; index++) {
+               const element = localdata[index];
+              if(element[2]==='Shorts'){
+               var strArray = element[5].split("/");
+              
+            //   localStorage.setItem(element[8], JSON.stringify(element))
+              
+               texthtmlprod+= '<div class="col"><div class="card text-black h-100"><img src="'+'../images/'+strArray[strArray.length-1]+'" class="card-img-top hover-shadow" alt="..." onclick="showdetails('+element[8]+',true)" /> <div class="card-body"> <div class="text-center">'+
+               '<h5 class="card-title">'+element[0]+'</h5>'+
+               '<p class="text-muted mb-4">'+element[3]+'</p>'
+             +'</div>'+
+              ' </div>'+
+              '</div>'+
+              '</div>'
+               
+              }
+            }
+            divproduct.style.opacity = 0;
+         
+            setTimeout(function(){ 
+               // Load new content
+               // Fade in
+               divproduct.innerHTML = texthtmlprod
+               divproduct.style.opacity = 1;
+              
+            },500);
+         
+         }
 
 function changeType(type){
-
    var method1 = type==='TOP' ? "showProdShirtAndAddtoPath()" : "showProdPantAndAddtoPath()"
    var method2 = type==='TOP' ? "showProdSweatersAndAddtoPath()" : "showProdShortAndAddtoPath()"
    var img1 = type==='TOP' ? "OIP.Y_BlxI7DWGfuXuLakHUPuQHaI4.jpg" : "OIP.c4lm8vQJncXu0WW5o4cZpgHaHa.jpg"
@@ -303,7 +524,14 @@ function changeType(type){
   ' <h4 class="text-dark">'+name2+'</h4>'+
   '</div>  '+
   '</div> '
+  document.getElementById("changeType").style.opacity = 0;
+
+  setTimeout(function(){ 
+   // Load new content
+   // Fade in
    document.getElementById("changeType").innerHTML = text
+   document.getElementById("changeType").style.opacity = 1;
+},500);
 }
 
 function back() {
