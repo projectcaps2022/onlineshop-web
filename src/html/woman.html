@@ -1,69 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Login</title>
-    <!-- MDB icon -->
-    <link rel="icon" href="../images/mdb-favicon.ico" type="image/x-icon" />
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
-    <!-- Google Fonts Roboto -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
-    />
-    <!-- MDB -->
-    <link rel="stylesheet" href="../css/mdb.min.css" />
-    <link rel="stylesheet" href="../css/custom.css" />
-    <script type="text/javascript" src="../javascript/guard.js"></script>
-    
 
-  </head>
-  <body style="background-color: #f3f1f1;">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Login</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="../images/mdb-favicon.ico" type="image/x-icon" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+  <!-- MDB -->
+  <link rel="stylesheet" href="../css/mdb.min.css" />
+  <link rel="stylesheet" href="../css/custom.css" />
+  <link rel="stylesheet" href="../css/custombackground.css" />
+  <script type="text/javascript" src="../javascript/guardcart.js"></script>
 
-    <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+</head>
+
+<body class="imghtmlall">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <!-- Container wrapper -->
     <div class="container-fluid">
       <!-- Toggle button -->
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-mdb-toggle="collapse"
-        data-mdb-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
       </button>
-  
+
       <!-- Collapsible wrapper -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <!-- Navbar brand -->
         <a class="navbar-brand mt-2 mt-lg-0" href="#">
-          <img
-            src="../images/OIP.MWta5-jpMDCJqqExJLY8QQHaHa.jpg"
-            height="15"
-            alt="MDB Logo"
-            loading="lazy"
-          />
+          <img src="../images/OIP.MWta5-jpMDCJqqExJLY8QQHaHa.jpg" height="15" alt="MDB Logo" loading="lazy" />
         </a>
         <!-- Left links -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a id="toIni" class="nav-link" href="#">Start</a>
             <script>
-                document.getElementById("toIni").href = "../../index.html?user="+ btoa(localStorage.getItem('user'))
-              </script>
+              document.getElementById("toIni").href = "../../index.html?user=" + btoa(localStorage.getItem('user'))
+            </script>
           </li>
           <li class="nav-item">
-            
+
             <a id="cart" class="nav-link" href="./cart.html">Cart</a>
             <script>
-              document.getElementById("cart").href = "./cart.html?user="+ btoa(localStorage.getItem('user'))
+              document.getElementById("cart").href = "./cart.html?user=" + btoa(localStorage.getItem('user'))
             </script>
           </li>
           <li class="nav-item">
@@ -73,50 +61,36 @@
         <!-- Left links -->
       </div>
       <!-- Collapsible wrapper -->
-  
+
       <!-- Right elements -->
       <div class="d-flex align-items-center">
-          <!--User-->
+        <!--User-->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li id="user" class="nav-item">
-              <a class="nav-link" href="#">My Purshased</a>
-              <script>
-                    document.getElementById('user').innerHTML = '<a class="nav-link" href="#"> Welcome, '+localStorage.getItem('user')+'</a>'
-              </script>
-            </li>
-          </ul>
+          <li id="user" class="nav-item">
+            <a class="nav-link" href="#">My Purshased</a>
+            <script>
+              document.getElementById('user').innerHTML = '<a class="nav-link" href="#"> Welcome, ' + localStorage.getItem('user') + '</a>'
+            </script>
+          </li>
+        </ul>
         <!-- Icon -->
         <a id="btncart" class="text-reset me-3" href="#">
           <script>
-            document.getElementById("btncart").href = "../html/cart.html?user="+ btoa(localStorage.getItem('user'))
+            document.getElementById("btncart").href = "../html/cart.html?user=" + btoa(localStorage.getItem('user'))
           </script>
           <i class="fas fa-shopping-cart"></i>
           <span class="badge rounded-pill badge-notification bg-danger">3</span>
         </a>
-        
-        
+
+
         <!-- Avatar -->
         <div class="dropdown">
-          <a
-            class="dropdown-toggle d-flex align-items-center hidden-arrow"
-            href="#"
-            id="navbarDropdownMenuAvatar"
-            role="button"
-            data-mdb-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <img
-              src="../images/OIP.Ghae4OEdb4UmC3hkqpFvLAHaGd.jpg"
-              class="rounded-circle"
-              height="25"
-              alt="Black and White Portrait of a Man"
-              loading="lazy"
-            />
+          <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar"
+            role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+            <img src="../images/OIP.Ghae4OEdb4UmC3hkqpFvLAHaGd.jpg" class="rounded-circle" height="25"
+              alt="Black and White Portrait of a Man" loading="lazy" />
           </a>
-          <ul
-            class="dropdown-menu dropdown-menu-end"
-            aria-labelledby="navbarDropdownMenuAvatar"
-          >
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
             <li>
               <a class="dropdown-item" href="#">My profile</a>
             </li>
@@ -125,7 +99,7 @@
             </li>
           </ul>
         </div>
-        
+
       </div>
       <!-- Right elements -->
     </div>
@@ -133,105 +107,91 @@
   </nav>
   <!-- Navbar -->
 
-  <section class="vh-100 mt-5" style="background-color: #f3f1f1;">
+  <section class="vh-100 mt-5">
     <div class="container">
 
 
       <!--init seach-->
       <nav id="showwom" class="navbar navbar-light bg-light mb-3 mt-5">
         <div class="container-fluid">
-          <a class="navbar-brand">Search</a>
-          
-          <!-- <button type="button" class="btn me-3 gradient-custom-2"  style="color: white;" onclick="getproducts()" >All </button>
-            
-          
-            <button type="button" class="btn me-3 gradient-custom-2" style="color: white;" onclick="getproductsWoman()" >Woman </button>
-        
-      
-              <button type="button" class="btn me-3 gradient-custom-2" style="color: white;" onclick="getproductsMEn()">Man </button> -->
-        
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb" id="addtolist">
+              <li class="breadcrumb-item"><a id="backtostart" href="#">Start
+                  <script>
+                    document.getElementById("backtostart").href = "../../index.html?user=" + btoa(localStorage.getItem('user'))
+                  </script>
+                </a></li>
+
+              <li class="breadcrumb-item active"><a id="backtolist" href="#">
+                  Women
+                  <script>
+                    document.getElementById("backtolist").href = "./woman.html?user=" + btoa(localStorage.getItem('user'))
+                  </script>
+                </a></li>
+
+            </ol>
+          </nav>
+
+
           <form class="d-flex input-group w-auto">
-            <input
-              type="search"
-              class="form-control rounded"
-              placeholder="Search"
-              aria-label="Search"
-              aria-describedby="search-addon"
-            />
+            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+              aria-describedby="search-addon" />
             <span class="input-group-text border-0" id="search-addon">
               <i class="fas fa-search"></i>
             </span>
           </form>
         </div>
       </nav>
-     
+
       <!--end search-->
-
-
-      <div id="productlist" class="row row-cols-1 row-cols-md-4 row-cols-sm-2 g-4">
-        
-        
-      </div>      
-    </div>
-    <div class="modal fade right show modal-top-right" id="exampleSideModal1" tabindex="-1" aria-labelledby="exampleSideModal1" aria-modal="true" role="dialog">
-      <div class="modal-dialog modal-side modal-top-right">
-        <div class="modal-content">
-          <div class="modal-header bg-primary text-white" style="background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);">
-            <h5 class="modal-title" id="exampleSideModal1">Product in the cart</h5>
-            <button type="button" class="btn-close btn-close-white" data-mdb-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="row">
-              <div class="col-3 text-center">
-                <i class="fas fa-shopping-cart fa-4x" style="color: rgb(196, 62, 89)"></i>
-              </div>
-
-              <div class="col-9">
-                <p>Do you need more time to make a purchase decision?</p>
-                <p>No pressure, your product will be waiting for you in the cart.</p>
-              </div>
+      <div class="container-fluid">
+        <div class="row row-cols-2 project" id="changeType">
+          <div class="col text-center">
+            <div>
+              <a id="toman" role="button" onclick="showProdTopAndAddtoPath()">
+                <img src="../images/0cc46431-eac7-4d3b-a051-aa9f4e750594_1.84c8f79f209a4ba522057b1be3b39bef.jpeg" class="rounded-circle hover-shadow rezizebpp" height="250"
+                  width="250" alt="Black and White Portrait of a Man" loading="lazy" />
+              </a>
+            </div>
+            <div>
+              <h4 class="text-dark mb-5">TOP</h4>
             </div>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn gradient-custom-2 text-white" >Go to the cart</button>
-            <button type="button" class="btn btn-outline-danger" data-mdb-dismiss="modal" >
-              Close
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal fade" id="loadingprods" tabindex="-1" aria-labelledby="loadingprods" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalloglLabel">Loading Products...</h5>
-          </div>
-          <div id="divbody" class="modal-body">
-            <div class="d-flex justify-content-center">
-              <div class="spinner-border" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
+          <div class="col text-center">
+            <div>
+              <a id="towoman" role="button" onclick="showProdBottomAndAddtoPath()">
+                <img src="../images/Women-High-Waist-Stretchy-Bell-Bottom-Leggings-Retro-Floral-Flare-Palazzo-Pant-Trousers.jpg"
+                  class="rounded-circle hover-shadow rezizebpp" height="250" width="250"
+                  alt="Black and White Portrait of a Man" loading="lazy" />
+              </a>
+            </div>
+            <div>
+              <h4 class="text-dark">BOTTOM</h4>
             </div>
           </div>
-          <div class="modal-footer">
-          </div>
+        </div>
+
+        <div id="productlist" class="row row-cols-1 row-cols-md-4 row-cols-sm-2 g-4 project">
+
+
         </div>
       </div>
-    </div>
-    <div class="modal fade right show modal-top-right" id="exampleSideModal1" tabindex="-1" aria-labelledby="exampleSideModal1" aria-modal="true" role="dialog">
+      <div class="modal fade right show modal-top-right" id="exampleSideModal1" tabindex="-1"
+        aria-labelledby="exampleSideModal1" aria-modal="true" role="dialog">
         <div class="modal-dialog modal-side modal-top-right">
           <div class="modal-content">
-            <div class="modal-header bg-primary text-white" style="background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);">
+            <div class="modal-header bg-primary text-white"
+              style="background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);">
               <h5 class="modal-title" id="exampleSideModal1">Product in the cart</h5>
-              <button type="button" class="btn-close btn-close-white" data-mdb-dismiss="modal" aria-label="Close"></button>
+              <button type="button" class="btn-close btn-close-white" data-mdb-dismiss="modal"
+                aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <div class="row">
                 <div class="col-3 text-center">
                   <i class="fas fa-shopping-cart fa-4x" style="color: rgb(196, 62, 89)"></i>
                 </div>
-  
+
                 <div class="col-9">
                   <p>Do you need more time to make a purchase decision?</p>
                   <p>No pressure, your product will be waiting for you in the cart.</p>
@@ -239,27 +199,129 @@
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn gradient-custom-2 text-white" >Go to the cart</button>
-              <button type="button" class="btn btn-outline-danger" data-mdb-dismiss="modal" >
+              <button type="button" class="btn gradient-custom-2 text-white">Go to the cart</button>
+              <button type="button" class="btn btn-outline-danger" data-mdb-dismiss="modal">
                 Close
               </button>
             </div>
           </div>
         </div>
       </div>
-</section>
-    <!-- End your project here-->
+      <div class="modal fade" id="loadingprods" tabindex="-1" aria-labelledby="loadingprods" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalloglLabel">Loading Products...</h5>
+            </div>
+            <div id="divbody" class="modal-body">
+              <div class="d-flex justify-content-center">
+                <div class="spinner-border" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade right show modal-top-right" id="exampleSideModal1" tabindex="-1"
+        aria-labelledby="exampleSideModal1" aria-modal="true" role="dialog">
+        <div class="modal-dialog modal-side modal-top-right">
+          <div class="modal-content">
+            <div class="modal-header bg-primary text-white"
+              style="background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);">
+              <h5 class="modal-title" id="exampleSideModal1">Product in the cart</h5>
+              <button type="button" class="btn-close btn-close-white" data-mdb-dismiss="modal"
+                aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-3 text-center">
+                  <i class="fas fa-shopping-cart fa-4x" style="color: rgb(196, 62, 89)"></i>
+                </div>
 
-    <!-- MDB -->
-    <script type="text/javascript" src="../javascript/mdb.min.js"></script>
-    <script type="text/javascript" src="../javascript/auth.js"></script>
-    <script type="text/javascript" src="../javascript/tocart.js"></script>
-    <script type="text/javascript" src="../javascript/womanprod.js">
-    </script>
-    <script>
-      getproductsWoman()
-    </script>
-    <!-- Custom scripts -->
-    <script type="text/javascript"></script>
-  </body>
+                <div class="col-9">
+                  <p>Do you need more time to make a purchase decision?</p>
+                  <p>No pressure, your product will be waiting for you in the cart.</p>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn gradient-custom-2 text-white">Go to the cart</button>
+              <button type="button" class="btn btn-outline-danger" data-mdb-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="prodid" tabindex="-1" aria-labelledby="prodid" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalloglLabel">Product Detail</h5>
+            </div>
+            <div id="divbody" class="modal-body">
+              <div class="d-flex justify-content-center" id="carddetail">
+                <div class="card text-black">
+                  <img src="../images/22241227-1-multi.webp" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <div class="text-center">
+                      <h5 class="card-title">leaf beach shirt</h5>
+                      <p class="text-muted mb-4">French Connection leaf beach shirt in marine and salt</p>
+                    </div>
+                    <div>
+                      <div class="d-flex justify-content-between">
+                        <span>Category</span>
+                        <span>Men</span>
+                      </div>
+                      <div class="d-flex justify-content-between">
+                        <span>Color</span>
+                        <span>Multi</span>
+                      </div>
+                      <div class="d-flex justify-content-between">
+                        <span>Dress</span>
+                        <span>Shirts</span>
+                      </div>
+                      <div class="d-flex justify-content-between">
+                        <span>Rating</span>
+                        <i class="fa-star fa-sm fas active" style="color: #FBD20E;">5</i>
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-between total font-weight-bold mt-4">
+                      <span>Price</span>
+                      <span>$100.00</span>
+                    </div>
+                  </div>
+                  <div class="card-footer text-center">
+                    <button type="button" class="btn btn-outline-primary ripple-surface-dark"
+                      data-mdb-ripple-color="dark" style="border-color: rgb(221, 54, 117); color: rgb(221, 54, 117);"
+                      onclick="showdetails()">
+                      Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+  <!-- End your project here-->
+
+  <!-- MDB -->
+  <script type="text/javascript" src="../javascript/mdb.min.js"></script>
+  <script type="text/javascript" src="../javascript/auth.js"></script>
+  <script type="text/javascript" src="../javascript/tocart.js"></script>
+  <script type="text/javascript" src="../javascript/products.js"></script>
+
+  <script type="text/javascript" src="../javascript/womanprod.js">
+  </script>
+  <script>
+    getproductsWoman()
+  </script>
+  <!-- Custom scripts -->
+  <script type="text/javascript"></script>
+</body>
+
 </html>

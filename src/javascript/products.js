@@ -43,6 +43,7 @@ function getproducts(){
                     '</ul>'
                     localStorage.setItem('products', JSON.stringify(data.row))
 
+                    localStorage.setItem('tipe', "A")
                     
                     for (let index = 1; index < data.row.length; index++) {
                        const element = data.row[index];
@@ -130,6 +131,15 @@ function showdetails(element,fromtop=false){
         '<input type="number" id="typeNumber" class="form-control" value="1" min="1" max="99" style= "width: 6vh;" onchange="setvalueP('+Number.parseFloat(element[7]).toFixed(2)+')"/>'+
       '</div></span>'+
      ' </div>'+
+     '<div class="d-flex justify-content-between">'+
+        '<span>Size</span><span>'+
+     '<select class="browser-default custom-select form-control" style="width: 6vh;">'+
+     '<option selected>XS</option>'+
+     ' <option value="1">S</option>'+
+     '<option value="2">M</option>'+
+     ' <option value="3">L</option>'+
+     '</select>'+
+        '</div>'+
         '</div>'+
         ' <div class="d-flex justify-content-between total font-weight-bold mt-4">'+
         ' <span>Price</span><span id="priceh" >$'+Number.parseFloat(element[7]).toFixed(2)+'</span>'+
@@ -474,10 +484,35 @@ function showProdPantAndAddtoPath(){
          }
 
 function changeType(type){
+
+   var imgtopShirt = ''
+   var imgbotOant = ''
+   var imgtopSweater = ''
+   var imgbotShort  = ''
+  switch (localStorage.getItem('tipe')) {
+     case 'M':
+       imgtopShirt = 'PingSpencerParent-Max-Quality.jpg'
+       imgbotOant = '7661491305ff244ef53eb8861d7f1f09cb-lounge-pants-15.2x.rsquare.w600.webp'
+       imgtopSweater = 'sweaters-2021-lead-1631199556.jpg'
+       imgbotShort  = '20190812-165630-500x500.jpg'
+        break;
+     case 'W':
+       imgtopShirt = 'Hot-Sale-Floral-Print-Blouses-Shirts-Smocking-Tops-Women-Shirts-Fitted-Long-Sleeve-Shirts-for-Ladies-Women-Tops-Girls-Blouse-Adult-Clothing-Apparel-Garments.jpg'
+       imgbotOant = 'NaranjaSabor-2020-Autumn-Winter-Women-s-Pants-Warm-Fleece-Casual-Thermal-Pant-Waterproof-Female-Thick-Trousers.webp'
+      imgtopSweater = 'item-image-0.jpg'
+       imgbotShort  = 'images.jpg'
+        break;
+     default:
+       imgtopShirt = 'imagesunix.jpg'
+       imgbotOant = '3aa4a2d1bbfaab80e47fb509f3e644b8.jpg'
+       imgtopSweater = '719L8L90edL._AC_UX342_.jpg'
+       imgbotShort  = 'mens-printed-sport-shorts-250x250.jpg'
+        break;
+  }
    var method1 = type==='TOP' ? "showProdShirtAndAddtoPath()" : "showProdPantAndAddtoPath()"
    var method2 = type==='TOP' ? "showProdSweatersAndAddtoPath()" : "showProdShortAndAddtoPath()"
-   var img1 = type==='TOP' ? "OIP.Y_BlxI7DWGfuXuLakHUPuQHaI4.jpg" : "OIP.c4lm8vQJncXu0WW5o4cZpgHaHa.jpg"
-   var img2 = type==='TOP' ? "OIP.j34Z100Ht4yMknspIxeDUAHaHa.jpg" : "R.afca3271435fefa0cdf76ceed6e8aa13.jpg"
+   var img1 = type==='TOP' ? imgtopShirt :  imgbotOant
+   var img2 = type==='TOP' ? imgtopSweater : imgbotShort
    var name1 = type==='TOP' ? "Shirt" : "Pant"
    var name2 = type==='TOP' ? "Sweaters" : "Shorts"
    

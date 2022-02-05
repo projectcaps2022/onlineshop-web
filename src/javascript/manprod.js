@@ -45,6 +45,7 @@ function getproductsMEn(){
                     for (let index = 1; index < data.row.length; index++) {
                         const element = data.row[index];
                         localStorage.setItem(element[8], JSON.stringify(element))
+                        localStorage.setItem('tipe', "M")
                         
                         if(element[1]==="Men"){
                           prodman.push(element)
