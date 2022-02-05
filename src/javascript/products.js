@@ -236,7 +236,7 @@ function getproductsMain(){
      });
 }
 
-function showProdTopAndAddtoPath(){
+function showProdTopAndAddtoPath(type='all'){
    var breadcumb = document.getElementById('addtolist')
    var text = ' <li class="breadcrumb-item active"><a href="#">Top</a></li>'
    breadcumb.insertAdjacentHTML('beforeend',text)
