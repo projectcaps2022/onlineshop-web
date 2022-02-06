@@ -73,6 +73,10 @@ formData.append('imageB64', ImagenB64);
            fetch(url, {
             method: 'POST',
             body: formData,
+            mode: 'no-cors',
+            header: {
+             'Access-Control-Allow-Origin':'*',
+            }
           })
           .then((response) => {
             a = response.clone()
