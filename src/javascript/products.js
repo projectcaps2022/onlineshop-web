@@ -7,7 +7,7 @@ function getproducts(){
     const modalp = new mdb.Modal(prodmod)
     modalp.show()
 
-    let url = "https://script.google.com/macros/s/AKfycbz8OORg1A70boTo59HWIWYcgc_9S9Pf32_6OxnlaBNsKtgk91v3d4nQH8EFg3-pOCl9/exec"
+    let url = "https://script.google.com/macros/s/AKfycbx2Zgas4M3oAfB9NYEXZaSBLU0EN8_QZZwRSwsV7nu0HQxZWZnYKZ8a57HmLTYwZ5UUuw/exec"
   
     var a ;  
     fetch(url, {
@@ -49,7 +49,7 @@ function getproducts(){
                        const element = data.row[index];
                        var strArray = element[5].split("/");
                        localStorage.setItem(element[8], JSON.stringify(element))
-                       texthtmlprod+= '<div class="col"><div class="card text-black h-100"><img src="'+'../images/'+strArray[strArray.length-1]+'" class="card-img-top hover-shadow" alt="..." onclick="showdetails('+element[8]+',true)" /> <div class="card-body"> <div class="text-center">'+
+                       texthtmlprod+= '<div class="col"><div class="card text-black h-100"><img src="'+''+element[10]+'" class="card-img-top hover-shadow" alt="..." onclick="showdetails('+element[8]+',true)" /> <div class="card-body"> <div class="text-center">'+
                        '<h5 class="card-title">'+element[0]+'</h5>'+
                        '<p class="text-muted mb-4">'+element[3]+'</p>'
                      +'</div>'+
@@ -108,7 +108,7 @@ function showdetails(element,fromtop=false){
 
   var text = '<div class="col">'+
    '<div class="card text-black">'+
-   '<img src="'+strArray+'" class="card-img-top" alt="..."/> '+
+   '<img src="'+element[10]+'" class="card-img-top" alt="..."/> '+
    '<div class="card-body"> <div class="text-center">'+
          '<h5 class="card-title">'+element[0]+'</h5>'+
          '<p class="text-muted mb-4">'+element[3]+'</p>'
@@ -183,7 +183,7 @@ function getproductsMain(){
    modalp.show()
    
 
-   let url = "https://script.google.com/macros/s/AKfycbz8OORg1A70boTo59HWIWYcgc_9S9Pf32_6OxnlaBNsKtgk91v3d4nQH8EFg3-pOCl9/exec"
+   let url = "https://script.google.com/macros/s/AKfycbx2Zgas4M3oAfB9NYEXZaSBLU0EN8_QZZwRSwsV7nu0HQxZWZnYKZ8a57HmLTYwZ5UUuw/exec"
  
    var a ;  
    fetch(url, {
@@ -217,7 +217,7 @@ function getproductsMain(){
                       
                        localStorage.setItem(element[8], JSON.stringify(element))
 
-                       texthtmlprod+= '<div class="col"><div class="card text-black h-100"><img src="'+element[5]+'" class="card-img-top hover-shadow" alt="..." onclick="showdetails('+element[8]+')" /> <div class="card-body"> <div class="text-center">'+
+                       texthtmlprod+= '<div class="col"><div class="card text-black h-100"><img src="'+element[10]+'" class="card-img-top hover-shadow" alt="..." onclick="showdetails('+element[8]+')" /> <div class="card-body"> <div class="text-center">'+
                              '<h5 class="card-title">'+element[0]+'</h5>'+
                              '<p class="text-muted mb-4">'+element[3]+'</p>'
                            +'</div>'+
@@ -263,7 +263,7 @@ function showProdTopAndAddtoPath(type='all'){
      
       //localStorage.setItem(element[8], JSON.stringify(element))
      
-      texthtmlprod+= '<div class="col"><div class="card text-black h-100"><img src="'+'../images/'+strArray[strArray.length-1]+'" class="card-img-top hover-shadow" alt="..." onclick="showdetails('+element[8]+',true)" /> <div class="card-body"> <div class="text-center">'+
+      texthtmlprod+= '<div class="col"><div class="card text-black h-100"><img src="'+''+element[10]+'" class="card-img-top hover-shadow" alt="..." onclick="showdetails('+element[8]+',true)" /> <div class="card-body"> <div class="text-center">'+
       '<h5 class="card-title">'+element[0]+'</h5>'+
       '<p class="text-muted mb-4">'+element[3]+'</p>'
     +'</div>'+
@@ -302,7 +302,7 @@ function showProdBottomAndAddtoPath(){
      
    //   localStorage.setItem(element[8], JSON.stringify(element))
      
-      texthtmlprod+= '<div class="col"><div class="card text-black h-100"><img src="'+'../images/'+strArray[strArray.length-1]+'" class="card-img-top hover-shadow" alt="..." onclick="showdetails('+element[8]+',true)" /> <div class="card-body"> <div class="text-center">'+
+      texthtmlprod+= '<div class="col"><div class="card text-black h-100"><img src="'+''+element[10]+'" class="card-img-top hover-shadow" alt="..." onclick="showdetails('+element[8]+',true)" /> <div class="card-body"> <div class="text-center">'+
       '<h5 class="card-title">'+element[0]+'</h5>'+
       '<p class="text-muted mb-4">'+element[3]+'</p>'
     +'</div>'+
@@ -342,7 +342,7 @@ function showProdShirtAndAddtoPath(){
      
    //   localStorage.setItem(element[8], JSON.stringify(element))
      
-      texthtmlprod+= '<div class="col"><div class="card text-black h-100"><img src="'+'../images/'+strArray[strArray.length-1]+'" class="card-img-top hover-shadow" alt="..." onclick="showdetails('+element[8]+',true)" /> <div class="card-body"> <div class="text-center">'+
+      texthtmlprod+= '<div class="col"><div class="card text-black h-100"><img src="'+''+element[10]+'" class="card-img-top hover-shadow" alt="..." onclick="showdetails('+element[8]+',true)" /> <div class="card-body"> <div class="text-center">'+
       '<h5 class="card-title">'+element[0]+'</h5>'+
       '<p class="text-muted mb-4">'+element[3]+'</p>'
     +'</div>'+
@@ -381,7 +381,7 @@ function showProdPantAndAddtoPath(){
         
       //   localStorage.setItem(element[8], JSON.stringify(element))
         
-         texthtmlprod+= '<div class="col"><div class="card text-black h-100"><img src="'+'../images/'+strArray[strArray.length-1]+'" class="card-img-top hover-shadow" alt="..." onclick="showdetails('+element[8]+',true)" /> <div class="card-body"> <div class="text-center">'+
+         texthtmlprod+= '<div class="col"><div class="card text-black h-100"><img src="'+''+element[10]+'" class="card-img-top hover-shadow" alt="..." onclick="showdetails('+element[8]+',true)" /> <div class="card-body"> <div class="text-center">'+
          '<h5 class="card-title">'+element[0]+'</h5>'+
          '<p class="text-muted mb-4">'+element[3]+'</p>'
        +'</div>'+
@@ -421,7 +421,7 @@ function showProdPantAndAddtoPath(){
            
          //   localStorage.setItem(element[8], JSON.stringify(element))
            
-            texthtmlprod+= '<div class="col"><div class="card text-black h-100"><img src="'+'../images/'+strArray[strArray.length-1]+'" class="card-img-top hover-shadow" alt="..." onclick="showdetails('+element[8]+',true)" /> <div class="card-body"> <div class="text-center">'+
+            texthtmlprod+= '<div class="col"><div class="card text-black h-100"><img src="'+''+element[10]+'" class="card-img-top hover-shadow" alt="..." onclick="showdetails('+element[8]+',true)" /> <div class="card-body"> <div class="text-center">'+
             '<h5 class="card-title">'+element[0]+'</h5>'+
             '<p class="text-muted mb-4">'+element[3]+'</p>'
           +'</div>'+
@@ -461,7 +461,7 @@ function showProdPantAndAddtoPath(){
               
             //   localStorage.setItem(element[8], JSON.stringify(element))
               
-               texthtmlprod+= '<div class="col"><div class="card text-black h-100"><img src="'+'../images/'+strArray[strArray.length-1]+'" class="card-img-top hover-shadow" alt="..." onclick="showdetails('+element[8]+',true)" /> <div class="card-body"> <div class="text-center">'+
+               texthtmlprod+= '<div class="col"><div class="card text-black h-100"><img src="'+''+element[10]+'" class="card-img-top hover-shadow" alt="..." onclick="showdetails('+element[8]+',true)" /> <div class="card-body"> <div class="text-center">'+
                '<h5 class="card-title">'+element[0]+'</h5>'+
                '<p class="text-muted mb-4">'+element[3]+'</p>'
              +'</div>'+

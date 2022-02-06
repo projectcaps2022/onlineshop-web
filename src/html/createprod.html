@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Login</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="../images/mdb-favicon.ico" type="image/x-icon" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+  <link rel="stylesheet" href="../css/custombackground.css" />
+  <!-- MDB -->
+  <link rel="stylesheet" href="../css/mdb.min.css" />
+  <link rel="stylesheet" href="../css/custom.css" />
+  <style>
+      .intro {
+  height: 100%;
+}
+
+.gradient-custom2 {
+  /* fallback for old browsers */
+  background: #fa709a;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to bottom right, rgba(250, 112, 154, 1), rgba(254, 225, 64, 1));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to bottom right, rgba(250, 112, 154, 1), rgba(254, 225, 64, 1))
+}
+  </style>
+</head>
+
+<body >
+<section class="intro">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-2">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-9 col-xl-7">
+            <div class="card">
+              <div class="card-body p-4 p-md-5">
+                <h3 class="mb-4 pb-2">Upload Product</h3>
+  
+                <form id="formprod" action="">
+  
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+  
+                      <div class="form-outline">
+                        <input type="text" id="Name" class="form-control" />
+                        <label class="form-label" for="Name">Name</label>
+                      </div>
+  
+                    </div>
+                    <div class="col-md-6 mb-4">
+  
+                      <div class="form-outline">
+                        <input type="text" id="Description" class="form-control" />
+                        <label class="form-label" for="Description">Description</label>
+                      </div>
+  
+                    </div>
+                  </div>
+  
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+  
+                      <div class="form-outline">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="Type"
+                        />
+                        <label for="Type" class="form-label">Category</label>
+                      </div>
+  
+                    </div>
+                    <div class="col-md-6 mb-4">
+  
+                      <h6 class="mb-2 pb-1">Gender: </h6>
+  
+                      <div class="form-check form-check-inline">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="inlineRadioOptions"
+                          id="femaleGender"
+                          value="Woman"
+                        />
+                        <label class="form-check-label" for="femaleGender">Female</label>
+                      </div>
+  
+                      <div class="form-check form-check-inline">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="inlineRadioOptions"
+                          id="maleGender"
+                          value="Men"
+                        />
+                        <label class="form-check-label" for="maleGender">Male</label>
+                      </div>
+  
+  
+                    </div>
+                  </div>
+  
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+  
+                      <div class="form-outline">
+                        <input type="text" id="Color" class="form-control" />
+                        <label class="form-label" for="Color">Color</label>
+                      </div>
+  
+                    </div>
+                    <div class="col-md-6 mb-4">
+  
+                      <div class="form-outline">
+                        <input type="tel" id="Rating" class="form-control" />
+                        <label class="form-label" for="Rating">Rating</label>
+                      </div>
+  
+                    </div>
+                  </div>
+  
+                  <div class="row">
+                    <div class="col-6">
+  
+                    
+  
+                      <div class="form-outline">
+                        <input type="text" id="Prize" class="form-control" />
+                        <label class="form-label" for="Color">Prize</label>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-outline">
+                        <input type="text" id="Part" class="form-control" />
+                        <label class="form-label" for="Color">Body Part</label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                        
+                            <label class="form-label" for="customFile">Default file input example</label>
+                            <input type="file" class="form-control" id="customFile" onchange="getBaseUrl()" />
+                       
+                      </div>
+                    <div class="col-12 text-center">
+                      <div class="mt-4">
+                        <input class="btn btn-lg gradient-custom-2" style="color: white;" type="button" onclick="insertprod()" value="Submit" />
+                      </div>
+  
+                    </div>
+                  </div>
+  
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script type="text/javascript" src="../javascript/mdb.min.js"></script>
+  <script type="text/javascript" src="../javascript/auth.js"></script>
+  <script type="text/javascript" src="../javascript/createprod.js"></script>
+  <!-- <script type="text/javascript" src="../javascript/tocart.js"></script>
+  <script type="text/javascript" src="../javascript/products.js"> -->
+  </script>
+  
+  <!-- Custom scripts -->
+  <script type="text/javascript"></script>
+</body>
+</html>
