@@ -79,9 +79,11 @@
             document.getElementById("btncart").href = "../html/cart.html?user=" + btoa(localStorage.getItem('user'))
           </script>
           <i class="fas fa-shopping-cart"></i>
-          <span class="badge rounded-pill badge-notification bg-danger">3</span>
+          <span class="badge rounded-pill badge-notification bg-danger" id="badgecart"></span>
         </a>
-
+        <script>
+          getItemsCart()
+        </script>
 
         <!-- Avatar -->
         <div class="dropdown">

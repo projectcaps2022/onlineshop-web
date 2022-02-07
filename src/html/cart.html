@@ -1,287 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Login</title>
-    <!-- MDB icon -->
-    <link rel="icon" href="../images/mdb-favicon.ico" type="image/x-icon" />
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
-    <!-- Google Fonts Roboto -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
-    />
-    <!-- MDB -->
-    <link rel="stylesheet" href="../css/mdb.min.css" />
-    <link rel="stylesheet" href="../css/custom.css" />
-    <script type="text/javascript" src="../javascript/guardcart.js"></script>
 
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <!-- Container wrapper -->
-        <div class="container-fluid">
-          <!-- Toggle button -->
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-mdb-toggle="collapse"
-            data-mdb-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <i class="fas fa-bars"></i>
-          </button>
-      
-          <!-- Collapsible wrapper -->
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Navbar brand -->
-            <a class="navbar-brand mt-2 mt-lg-0" href="#">
-              <img
-                src="../images/OIP.MWta5-jpMDCJqqExJLY8QQHaHa.jpg"
-                height="15"
-                alt="MDB Logo"
-                loading="lazy"
-              />
-            </a>
-            <!-- Left links -->
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a id="ini" class="nav-link" href="#">Products</a>
-                    <script>
-                    document.getElementById("ini").href = "../../index.html?user="+ btoa(localStorage.getItem('user'))
-                  </script>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Cart</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">My Orders</a>
-              </li>
-            </ul>
-            <!-- Left links -->
-          </div>
-          <!-- Collapsible wrapper -->
-      
-          <!-- Right elements -->
-          <div class="d-flex align-items-center">
-              <!--User-->
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li id="user" class="nav-item">
-                  <a class="nav-link" href="#">My Purshased</a>
-                  <script>
-                        document.getElementById('user').innerHTML = '<a class="nav-link" href="#"> Welcome, '+localStorage.getItem('user')+'</a>'
-                  </script>
-                </li>
-              </ul>
-            <!-- Icon -->
-            <a class="text-reset me-3" href="#">
-              <i class="fas fa-shopping-cart"></i>
-              <span class="badge rounded-pill badge-notification bg-danger">5</span>
-            </a>
-            
-            
-            <!-- Avatar -->
-            <div class="dropdown">
-              <a
-                class="dropdown-toggle d-flex align-items-center hidden-arrow"
-                href="#"
-                id="navbarDropdownMenuAvatar"
-                role="button"
-                data-mdb-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <img
-                  src="../images/OIP.Ghae4OEdb4UmC3hkqpFvLAHaGd.jpg"
-                  class="rounded-circle"
-                  height="25"
-                  alt="Black and White Portrait of a Man"
-                  loading="lazy"
-                />
-              </a>
-              <ul
-                class="dropdown-menu dropdown-menu-end"
-                aria-labelledby="navbarDropdownMenuAvatar"
-              >
-                <li>
-                  <a class="dropdown-item" href="#">My profile</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="../html/login.html" onclick="localStorage.removeItem('user')">Logout</a>
-                </li>
-              </ul>
-            </div>
-            
-          </div>
-          <!-- Right elements -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Login</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="../images/mdb-favicon.ico" type="image/x-icon" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+  <!-- MDB -->
+  <link rel="stylesheet" href="../css/mdb.min.css" />
+  <link rel="stylesheet" href="../css/custom.css" />
+  <link rel="stylesheet" href="../css/custombackground.css" />
+  <script type="text/javascript" src="../javascript/guardcart.js"></script>
+
+</head>
+
+<body class="imghtmlall">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Toggle button -->
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Navbar brand -->
+        <a class="navbar-brand mt-2 mt-lg-0" href="#">
+          <img src="../images/OIP.MWta5-jpMDCJqqExJLY8QQHaHa.jpg" height="15" alt="MDB Logo" loading="lazy" />
+        </a>
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a id="ini" class="nav-link" href="#">Products</a>
+            <script>
+              document.getElementById("ini").href = "../../index.html?user=" + btoa(localStorage.getItem('user'))
+            </script>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">My Orders</a>
+          </li>
+        </ul>
+        <!-- Left links -->
+      </div>
+      <!-- Collapsible wrapper -->
+
+      <!-- Right elements -->
+      <div class="d-flex align-items-center">
+        <!--User-->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li id="user" class="nav-item">
+            <a class="nav-link" href="#">My Purshased</a>
+            <script>
+              document.getElementById('user').innerHTML = '<a class="nav-link" href="#"> Welcome, ' + localStorage.getItem('user') + '</a>'
+            </script>
+          </li>
+        </ul>
+        <!-- Icon -->
+        <a class="text-reset me-3" href="#">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="badge rounded-pill badge-notification bg-danger project" id="badgecart"></span>
+        </a>
+        <script>
+          getItemsCart()
+        </script>
+
+
+        <!-- Avatar -->
+        <div class="dropdown">
+          <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar"
+            role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+            <img src="../images/OIP.Ghae4OEdb4UmC3hkqpFvLAHaGd.jpg" class="rounded-circle" height="25"
+              alt="Black and White Portrait of a Man" loading="lazy" />
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+            <li>
+              <a class="dropdown-item" href="#">My profile</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="../html/login.html" onclick="localStorage.removeItem('user')">Logout</a>
+            </li>
+          </ul>
         </div>
-        <!-- Container wrapper -->
-      </nav>
-      <!-- Navbar -->
-      <!--List products-->
-        <section class="vh-100" style="background-color: #c2c2c2;">
-            <div class="container h-100">
-              <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col">
-                  <p><span class="h2">Shopping Cart </span><span class="h4">(3 item in your cart)</span></p>
-          
-                  <div class="card mb-4">
-                    <div class="card-body p-4">
-          
-                      <div class="row align-items-center">
-                        <div class="col-md-2">
-                          <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/1.webp" class="img-fluid" alt="Generic placeholder image">
-                        </div>
-                        <div class="col-md-2 d-flex justify-content-center">
-                          <div>
-                            <p class="small text-muted mb-4 pb-2">Name</p>
-                            <p class="lead fw-normal mb-0">iPad Air</p>
-                          </div>
-                        </div>
-                        <div class="col-md-2 d-flex justify-content-center">
-                          <div>
-                            <p class="small text-muted mb-4 pb-2">Color</p>
-                            <p class="lead fw-normal mb-0"><i class="fas fa-circle me-2" style="color: #fdd8d2;"></i> pink rose</p>
-                          </div>
-                        </div>
-                        <div class="col-md-2 d-flex justify-content-center">
-                          <div>
-                            <p class="small text-muted mb-4 pb-2">Quantity</p>
-                            <p class="lead fw-normal mb-0">1</p>
-                          </div>
-                        </div>
-                        <div class="col-md-2 d-flex justify-content-center">
-                          <div>
-                            <p class="small text-muted mb-4 pb-2">Price</p>
-                            <p class="lead fw-normal mb-0">$799</p>
-                          </div>
-                        </div>
-                        <div class="col-md-2 d-flex justify-content-center">
-                          <div>
-                            <p class="small text-muted mb-4 pb-2">Total</p>
-                            <p class="lead fw-normal mb-0">$799</p>
-                          </div>
-                        </div>
-                      </div>
-          
-                    </div>
-                  </div>
-                  <div class="card mb-4">
-                    <div class="card-body p-4">
-          
-                      <div class="row align-items-center">
-                        <div class="col-md-2">
-                          <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/1.webp" class="img-fluid" alt="Generic placeholder image">
-                        </div>
-                        <div class="col-md-2 d-flex justify-content-center">
-                          <div>
-                            <p class="small text-muted mb-4 pb-2">Name</p>
-                            <p class="lead fw-normal mb-0">iPad Air</p>
-                          </div>
-                        </div>
-                        <div class="col-md-2 d-flex justify-content-center">
-                          <div>
-                            <p class="small text-muted mb-4 pb-2">Color</p>
-                            <p class="lead fw-normal mb-0"><i class="fas fa-circle me-2" style="color: #fdd8d2;"></i> pink rose</p>
-                          </div>
-                        </div>
-                        <div class="col-md-2 d-flex justify-content-center">
-                          <div>
-                            <p class="small text-muted mb-4 pb-2">Quantity</p>
-                            <p class="lead fw-normal mb-0">1</p>
-                          </div>
-                        </div>
-                        <div class="col-md-2 d-flex justify-content-center">
-                          <div>
-                            <p class="small text-muted mb-4 pb-2">Price</p>
-                            <p class="lead fw-normal mb-0">$799</p>
-                          </div>
-                        </div>
-                        <div class="col-md-2 d-flex justify-content-center">
-                          <div>
-                            <p class="small text-muted mb-4 pb-2">Total</p>
-                            <p class="lead fw-normal mb-0">$799</p>
-                          </div>
-                        </div>
-                      </div>
 
-          
+      </div>
+      <!-- Right elements -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+  <!--List products-->
+  <!-- <section class="h-responsive gradient-custom-2" > -->
+    <div class="container py-5">
+      <div class="row d-flex justify-content-center my-4">
+        <div class="col-md-8">
+          <div class="card mb-4">
+            <div class="card-header py-3">
+              <h5 class="mb-0">Cart Items</h5>
+            </div>
+            <div class="card-body project" id="itembody">
+              <!-- Single item -->
+              <div class="row">
+                <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                  <!-- Image -->
+                  <div class="bg-image hover-overlay hover-zoom ripple rounded text-center" data-mdb-ripple-color="light">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp"
+                      class="w-75 h-75" alt="Blue Jeans Jacket" />
+                    <a href="#!">
+                      <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                    </a>
+                  </div>
+                  <!-- Image -->
+                </div>
+  
+                <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                  <!-- Data -->
+                  <p><strong>Blue denim shirt</strong></p>
+                  <p>Color: blue</p>
+                  <p>Size: M</p>
+                  <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
+                    title="Remove item">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                  <button type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip"
+                    title="Move to the wish list">
+                    <i class="fas fa-heart"></i>
+                  </button>
+                  <!-- Data -->
+                </div>
+  
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                  <!-- Quantity -->
+                  <div class="d-flex mb-4" style="max-width: 300px">
+                    <button class="btn btn-primary px-3 me-2"
+                      onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                      <i class="fas fa-minus"></i>
+                    </button>
+  
+                    <div class="form-outline">
+                      <input id="form1" min="0" name="quantity" value="1" type="number" class="form-control" />
+                      <label class="form-label" for="form1">Quantity</label>
                     </div>
+  
+                    <button class="btn btn-primary px-3 ms-2"
+                      onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                      <i class="fas fa-plus"></i>
+                    </button>
                   </div>
-<div class="card mb-4">
-                    <div class="card-body p-4">
-          
-                      <div class="row align-items-center">
-                        <div class="col-md-2">
-                          <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/1.webp" class="img-fluid" alt="Generic placeholder image">
-                        </div>
-                        <div class="col-md-2 d-flex justify-content-center">
-                          <div>
-                            <p class="small text-muted mb-4 pb-2">Name</p>
-                            <p class="lead fw-normal mb-0">iPad Air</p>
-                          </div>
-                        </div>
-                        <div class="col-md-2 d-flex justify-content-center">
-                          <div>
-                            <p class="small text-muted mb-4 pb-2">Color</p>
-                            <p class="lead fw-normal mb-0"><i class="fas fa-circle me-2" style="color: #fdd8d2;"></i> pink rose</p>
-                          </div>
-                        </div>
-                        <div class="col-md-2 d-flex justify-content-center">
-                          <div>
-                            <p class="small text-muted mb-4 pb-2">Quantity</p>
-                            <p class="lead fw-normal mb-0">1</p>
-                          </div>
-                        </div>
-                        <div class="col-md-2 d-flex justify-content-center">
-                          <div>
-                            <p class="small text-muted mb-4 pb-2">Price</p>
-                            <p class="lead fw-normal mb-0">$799</p>
-                          </div>
-                        </div>
-                        <div class="col-md-2 d-flex justify-content-center">
-                          <div>
-                            <p class="small text-muted mb-4 pb-2">Total</p>
-                            <p class="lead fw-normal mb-0">$799</p>
-                          </div>
-                        </div>
-                      </div>
-          
-                    </div>
-                  </div>
-          
-                  <div class="card mb-5">
-                    <div class="card-body p-4">
-          
-                      <div class="float-end">
-                        <p class="mb-0 me-5 d-flex align-items-center">
-                          <span class="small text-muted me-2">Order total:</span> <span class="lead fw-normal">$3497</span>
-                        </p>
-                      </div>
-          
-                    </div>
-                  </div>
-          
-                  <div class="d-flex justify-content-end">
-                    <button type="button" class="btn btn-light btn-lg me-2">Continue shopping</button>
-                    <button type="button" class="btn btn-primary btn-lg">Confirm all</button>
-                  </div>
-          
+                  <!-- Quantity -->
+  
+                  <!-- Price -->
+                  <p class="text-start text-md-center">
+                    <strong>$17.99</strong>
+                  </p>
+                  <!-- Price -->
                 </div>
               </div>
+              <!-- Single item -->
+  
+              <hr class="my-4" />
+  
+              <!-- Single item -->
+              <div class="row">
+                <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                  <!-- Image -->
+                  <div class="bg-image hover-overlay hover-zoom ripple rounded text-center" data-mdb-ripple-color="light">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/13a.webp"
+                      class="w-75 h-75" />
+                    <a href="#!">
+                      <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                    </a>
+                  </div>
+                  <!-- Image -->
+                </div>
+  
+                <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                  <!-- Data -->
+                  <p><strong>Red hoodie</strong></p>
+                  <p>Color: red</p>
+                  <p>Size: M</p>
+  
+                  <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
+                    title="Remove item">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                  <button type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip"
+                    title="Move to the wish list">
+                    <i class="fas fa-heart"></i>
+                  </button>
+                  <!-- Data -->
+                </div>
+  
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                  <!-- Quantity -->
+                  <div class="d-flex mb-4" style="max-width: 300px">
+                    <button class="btn btn-primary px-3 me-2"
+                      onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                      <i class="fas fa-minus"></i>
+                    </button>
+  
+                    <div class="form-outline">
+                      <input id="form1" min="0" name="quantity" value="1" type="number" class="form-control" />
+                      <label class="form-label" for="form1">Quantity</label>
+                    </div>
+  
+                    <button class="btn btn-primary px-3 ms-2"
+                      onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                      <i class="fas fa-plus"></i>
+                    </button>
+                  </div>
+                  <!-- Quantity -->
+  
+                  <!-- Price -->
+                  <p class="text-start text-md-center">
+                    <strong>$17.99</strong>
+                  </p>
+                  <!-- Price -->
+                </div>
+              </div>
+              <!-- Single item -->
             </div>
-          </section>
-      <!--End LIst-->
-         <!-- MDB -->
-    <script type="text/javascript" src="../javascript/mdb.min.js"></script>
-    <script type="text/javascript" src="../javascript/auth.js"></script>
-    <script type="text/javascript" src="../javascript/tocart.js"></script>
-    
-    <!-- Custom scripts -->
-    <script type="text/javascript"></script>
-  </body>
+          </div>
+          
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <div class="card-header py-3">
+              <h5 class="mb-0">Summary</h5>
+            </div>
+            <div class="card-body">
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                  Products
+                  <span id="pricestd">$53.98</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                  Shipping
+                  <span>Gratis</span>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                  <div>
+                    <strong>Total amount</strong>
+                    <strong>
+                      <p class="mb-0">(including VAT)</p>
+                    </strong>
+                  </div>
+                  <span><strong id="pricetotal">$53.98</strong></span>
+                </li>
+              </ul>
+  
+              <button type="button" class="btn btn-primary btn-lg btn-block">
+                Go to checkout
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+  <!--End LIst-->
+  <!-- MDB -->
+  <script type="text/javascript" src="../javascript/mdb.min.js"></script>
+  <script type="text/javascript" src="../javascript/auth.js"></script>
+  <script type="text/javascript" src="../javascript/tocart.js"></script>
+
+  <!-- Custom scripts -->
+  <script type="text/javascript">
+    buildProds()
+  </script>
+</body>
+
 </html>
