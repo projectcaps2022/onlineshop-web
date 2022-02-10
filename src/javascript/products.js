@@ -94,7 +94,7 @@ function filterBy(object,type){
 
 
 function showdetails(element,fromtop=false){
-
+   var tocart = element
    var element = JSON.parse(localStorage.getItem(element))
    console.log(element);
 
@@ -133,11 +133,11 @@ function showdetails(element,fromtop=false){
      ' </div>'+
      '<div class="d-flex justify-content-between">'+
         '<span>Size</span><span>'+
-     '<select class="browser-default custom-select form-control" style="width: 6vh;">'+
-     '<option selected>XS</option>'+
-     ' <option value="1">S</option>'+
-     '<option value="2">M</option>'+
-     ' <option value="3">L</option>'+
+     '<select id="sizeselect" class="browser-default custom-select form-control" style="width: 6vh;">'+
+     '<option value="XS" selected>XS</option>'+
+     ' <option value="S">S</option>'+
+     '<option value="M">M</option>'+
+     ' <option value="L">L</option>'+
      '</select>'+
         '</div>'+
         '</div>'+
@@ -146,7 +146,7 @@ function showdetails(element,fromtop=false){
         '</div>'+
         ' </div>'+
         '<div class="card-footer text-center">'+
-        ' <button type="button" class="btn btn-outline-primary" data-mdb-dismiss="modal" data-mdb-ripple-color="dark" style="border-color: #dd3675; color: #dd3675;" onclick="showcart()">Add to Cart</button>'+
+        ' <button type="button" class="btn btn-outline-primary" data-mdb-dismiss="modal" data-mdb-ripple-color="dark" style="border-color: #dd3675; color: #dd3675;" onclick="showcart('+tocart+')">Add to Cart</button>'+
         ' <button type="button" class="btn btn-outline-secondary" data-mdb-ripple-color="dark" data-mdb-dismiss="modal">Back</button>'+
 
         ' </div>'+

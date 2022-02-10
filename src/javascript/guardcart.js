@@ -9,7 +9,7 @@ if(!search){
 }
 
 
-function getItemsCart () {
+function getItemsCart (isenabled=false) {
  
  
   // const prodmod = document.getElementById('loadingprods')
@@ -45,6 +45,9 @@ function getItemsCart () {
                    }
                    localStorage.setItem('usercart', JSON.stringify(cart))
                    badge.innerHTML = cart.length
+                   if(isenabled){
+                    buildProds()
+                   }
               }
            )
          
@@ -64,7 +67,7 @@ function getItemsCart () {
 
   for (let index = 0; index < items.length; index++) {
     const element = items[index];
-    
+    localStorage.setItem(element[0], element)
   text+='  <div class="row">'+
   '<div class="col-lg-3 col-md-12 mb-4 mb-lg-0">'+
     '<!-- Image -->'+
@@ -79,10 +82,10 @@ function getItemsCart () {
  ' </div>'+
   '<div class="col-lg-5 col-md-6 mb-4 mb-lg-0">'+
    ' <!-- Data -->'+
-   ' <p><strong>Red hoodie</strong></p>'+
+   ' <p><strong>'+element[6]+'</strong></p>'+
    ' <p>Color: '+element[10]+'</p>'+
    ' <p>Size: '+element[3]+'</p>'+
-     ' <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"'+
+     ' <button type="button" onclick="removeitem('+element[0]+')" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"'+
      ' title="Remove item">'+
      ' <i class="fas fa-trash"></i>'+
     '</button>'+
@@ -92,15 +95,15 @@ function getItemsCart () {
    ' <!-- Quantity -->'+
    ' <div class="d-flex mb-4" style="max-width: 300px">'+
     '  <button class="btn btn-primary px-3 me-2"'+
-     '   onclick="this.parentNode.querySelector(\'input[type=number]\').stepDown()">'+
+     '   onclick="this.parentNode.querySelector(\'input[type=number]\').stepDown(); countprice()">'+
       '  <i class="fas fa-minus"></i>'+
       '</button>'+
      ' <div class="form-outline">'+
-      '  <input id="form1" min="0" name="quantity" value="'+element[2]+'" type="number" class="form-control" />'+
-     '   <label class="form-label" for="form1">Quantity</label>'+
+      '  <input id="form1" min="0" name="quantity" value="'+element[2]+'" type="number" class="form-control multipliers" onchange="countprice()" />'+
+    // '   <label class="form-label" for="form1">Quantity</label>'+
      ' </div>'+
      ' <button class="btn btn-primary px-3 ms-2"'+
-     '   onclick="this.parentNode.querySelector(\'input[type=number]\').stepUp()">'+
+     '   onclick="this.parentNode.querySelector(\'input[type=number]\').stepUp(); countprice()">'+
        ' <i class="fas fa-plus"></i>'+
      ' </button>'+
    ' </div>'+
@@ -108,12 +111,12 @@ function getItemsCart () {
 
    ' <!-- Price -->'+
    ' <p class="text-start text-md-center">'+
-    '  <strong>$'+Number.parseFloat(element[13]).toFixed(2)+'</strong>'+
+    '  <strong class="prices">$'+Number.parseFloat(element[13]).toFixed(2)+'</strong>'+
     '</p>'+
    ' <!-- Price -->'+
  ' </div>'+
 ' </div>'+
-'<hr class="my-4" />'
+'<hr class="my-2" />'
     //cuant[index] = [Number.parseFloat(element[13]).toFixed(2),element[2]]
     total += element[2]*element[13]
   }
@@ -122,8 +125,13 @@ function getItemsCart () {
     
     var divproduct = document.getElementById('itembody')
     divproduct.style.opacity = 0;
-                      divproduct.innerHTML = text
-                      divproduct.style.opacity = 1;
+    setTimeout(function(){ 
+      // Load new content
+      // Fade in
+      divproduct.innerHTML = text
+      divproduct.style.opacity = 1;
+     
+   },500);
                      
                    
     document.getElementById('pricestd').innerHTML = '$'+Number.parseFloat(total).toFixed(2)
@@ -136,3 +144,29 @@ function getItemsCart () {
      var doc =   document.getElementById('pricestd');
      console.log(doc);
  }
+
+ function countprice(item=null) {
+   var strongs =  document.getElementsByClassName('prices')
+
+   var inputs = document.getElementsByClassName('multipliers')
+    total = 0;
+   for (let index = 0; index < strongs.length; index++) {
+     
+    var strNotParsed = strongs[index].innerText;
+   // console.log();
+    // console.log(parseFloat(inputs[index].value));
+     total+= parseFloat(strNotParsed.replace('$','')) * parseFloat(inputs[index].value)
+   }
+   //console.log(total);
+   document.getElementById('pricetotal').innerHTML = '$'+Number.parseFloat(total).toFixed(2)
+
+  // console.log(inputs);
+ }
+
+ function removeitem(item) {
+  getItemsCart(true)
+ 
+  
+}
+
+
