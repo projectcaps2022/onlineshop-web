@@ -27,7 +27,7 @@ function showcart(product=null){
     form.append('Part', element[9])
     form.append('imageB64', element[10])
 
-    let url = "https://script.google.com/macros/s/AKfycbyhOVFLwVHcHIKH8fsJoSmfqKYGmGHTzf1M3stb1MVnXNelEdL6TWOGkeEPJMgt3g0A9A/exec"
+    let url = "https://script.google.com/macros/s/AKfycbxvQT_14qkxm2eZt7Y6qtn_r5klZrbhIBfgyKr9sbqxGswvpBsCMjmj4bqbwBxUrRygaA/exec"
     //const form = document.getElementById('form-register');
     var a = null
     

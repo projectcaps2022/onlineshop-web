@@ -99,7 +99,7 @@ function showdetails(element,fromtop=false){
    console.log(element);
 
    var strArray = element[5].split("/");
-
+  
    if(fromtop){
     strArray =   '../images/'+strArray[strArray.length-1]
    }else{

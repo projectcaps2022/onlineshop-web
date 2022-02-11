@@ -20,7 +20,7 @@ function getItemsCart () {
     let users = localStorage.getItem('user')
     var badge = document.getElementById('badgecart');
     //console.log(users);
-   let url = "https://script.google.com/macros/s/AKfycbxJRAMrxsQXgFSIaC9p-IdXXPAuxaUdOMzclqRscTCIH3v-BcgmELEULPf7-LdzCDNzCA/exec"
+   let url = "https://script.google.com/macros/s/AKfycbxvQT_14qkxm2eZt7Y6qtn_r5klZrbhIBfgyKr9sbqxGswvpBsCMjmj4bqbwBxUrRygaA/exec"
  
    var a ;  
    fetch(url, {

@@ -12,7 +12,7 @@ if(!search){
 
 function getItemsCart (isenabled=false) {
  
- 
+  
   const prodmod = document.getElementById('loadingprods')
   const modalp = new mdb.Modal(prodmod)
   modalp.show()
@@ -20,7 +20,7 @@ function getItemsCart (isenabled=false) {
     let users = localStorage.getItem('user')
     var badge = document.getElementById('badgecart');
     //console.log(users);
-   let url = "https://script.google.com/macros/s/AKfycbxJRAMrxsQXgFSIaC9p-IdXXPAuxaUdOMzclqRscTCIH3v-BcgmELEULPf7-LdzCDNzCA/exec"
+   let url = "https://script.google.com/macros/s/AKfycbxvQT_14qkxm2eZt7Y6qtn_r5klZrbhIBfgyKr9sbqxGswvpBsCMjmj4bqbwBxUrRygaA/exec"
  
    var a ;  
    fetch(url, {
@@ -59,6 +59,56 @@ function getItemsCart (isenabled=false) {
      });
  }
 
+ function getItemsCart2 (isenabled=false) {
+ 
+  
+  // const prodmod = document.getElementById('loadingprods')
+  // const modalp = new mdb.Modal(prodmod)
+  // modalp.show()
+   
+    let users = localStorage.getItem('user')
+    var badge = document.getElementById('badgecart');
+    //console.log(users);
+   let url = "https://script.google.com/macros/s/AKfycbxvQT_14qkxm2eZt7Y6qtn_r5klZrbhIBfgyKr9sbqxGswvpBsCMjmj4bqbwBxUrRygaA/exec"
+ 
+   var a ;  
+   fetch(url, {
+       method: 'GET'
+     })
+     .then((response) => {
+ 
+         a = response.clone();
+ 
+ 
+         var text = ''
+           a.json().then((data) => {
+                 //  console.log(data)
+                   var cart = []
+
+                   for (let index = 0; index < data.row.length; index++) {
+                     const element = data.row[index];
+                    if(element[4]=== users && element[1]==="Pending"){
+                    
+                      cart.push(element)
+
+                    }
+                   }
+                   localStorage.removeItem('usercart')
+                   localStorage.setItem('usercart', JSON.stringify(cart))
+                   badge.innerHTML = cart.length
+                  //  if(isenabled){
+                  //   buildProds()
+                  //  }
+                  //  modalp.hide()
+              }
+           )
+         
+     
+       
+     });
+ }
+
+
 
  function buildProds(){
 
@@ -67,7 +117,9 @@ function getItemsCart (isenabled=false) {
   var total = 0;
   console.log(items);
   var cuant = []
-
+  if(!items.length){
+    text = 'No items in the cart yet'
+  }
   for (let index = 0; index < items.length; index++) {
     const element = items[index];
     localStorage.setItem(element[0], JSON.stringify(element))
@@ -193,7 +245,7 @@ function getItemsCart (isenabled=false) {
     form.append('Part', data[15])
     form.append('imageB64', data[16])
 
-    let url = "https://script.google.com/macros/s/AKfycbwSLx5Ocjr5NJOQwWSjc_hBWhoNPluDEGl5VR33gPfdS3pfq2sQXnQbmVwdmFczvqlX2Q/exec"
+    let url = "https://script.google.com/macros/s/AKfycbyKboNwxr9qCHLnbMXzxjs6SOc1vNZXf-9W9Z2CzVN1_eNKefyOMbRUNRA__7Y0naiHZw/exec"
     //const form = document.getElementById('form-register');
     var a = null
     
@@ -211,6 +263,93 @@ function getItemsCart (isenabled=false) {
           })
   //console.log()
   //getItemsCart(true)
+ 
+  
+}
+
+
+function checkout() {
+
+ var itemstocheck =  JSON.parse(localStorage.getItem('usercart'));
+
+ var strongs =  document.getElementsByClassName('prices')
+ var inputs = document.getElementsByClassName('multipliers')
+  var form = new FormData()
+  var items = []
+  const prodmodae = document.getElementById('checkout')
+  const itembod = document.getElementById('divbodyconf')
+  const modalpae = new mdb.Modal(prodmodae)
+  modalpae.show()
+ for (let index = 0; index < itemstocheck.length; index++) {
+   
+   
+   var arr = []
+   
+   
+  //   form.append('Id_prod', parseInt(data[0]))
+  //   form.append('Confirmed', "Canceled")
+  //   form.append('Quantity', data[2])
+  //   form.append('Size', data[3])
+  //   form.append('action', 'delete')
+  //   form.append('User', data[4])
+  //   form.append('Name', data[6])
+  //   form.append('Category', data[7])
+  //   form.append('Type', data[8])
+  //   form.append('Description', data[9])
+  //   form.append('Color', data[10])
+  //   form.append('Image', data[11])
+  //   form.append('Rating', data[12])
+  //   form.append('prize', '$'+data[13])
+  //   form.append('Id_Producto', data[14])
+  //   form.append('Part', data[15])
+  //   form.append('imageB64', data[16])
+  arr[0] = parseInt(itemstocheck[index][0])
+  arr[1]= "Confirmed"
+  arr[2]=inputs[index].value
+  arr[3] = itemstocheck[index][3]
+  arr[4] = itemstocheck[index][4]
+  arr[5] = itemstocheck[index][6]
+  arr[6] = itemstocheck[index][7]
+  arr[7] = itemstocheck[index][8]
+  arr[8] = itemstocheck[index][9]
+  arr[9] = itemstocheck[index][10]
+  arr[10] = itemstocheck[index][11]
+  arr[11] = itemstocheck[index][12]
+  arr[12] = '$'+itemstocheck[index][13]
+  arr[13]= itemstocheck[index][14]
+  arr[14] = itemstocheck[index][15]
+  arr[15] = itemstocheck[index][16]
+
+  items.push(arr);
+}
+console.log(JSON.stringify(items))
+form.append('action', 'update')
+form.append('data', JSON.stringify(items))
+
+
+
+    let url = "https://script.google.com/macros/s/AKfycbyKboNwxr9qCHLnbMXzxjs6SOc1vNZXf-9W9Z2CzVN1_eNKefyOMbRUNRA__7Y0naiHZw/exec"
+    //const form = document.getElementById('form-register');
+    var a = null
+    
+           fetch(url, {
+            method: 'POST',
+            body: form
+          }).then((response) => {
+            a = response.clone()
+            //console.log(a);
+            a.json().then((data)=>{
+                console.log('data', data)
+                itembod.innerHTML = '<p style="color: green;"> All products are payed succefully. See My Order for more info </p>'
+                setTimeout(function(){ 
+                  modalpae.hide()
+                  getItemsCart(true)
+                  
+               },2000);
+
+            //    modalpa.hide()
+            })
+          })
  
   
 }

@@ -75,7 +75,10 @@
             </script>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">My Orders</a>
+            <a class="nav-link" id="toorders" href="#">My Orders</a>
+            <script>
+              document.getElementById("toorders").href = "./src/html/orders.html?user=" + btoa(localStorage.getItem('user'))
+            </script>
           </li>
         </ul>
         <!-- Left links -->
@@ -280,9 +283,14 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn gradient-custom-2 text-white">Go to the cart</button>
+          <script>
+            function tocart() {
+              window.location = './src/html/cart.html?user='+btoa( localStorage.getItem('user'));
+            }
+          </script>
+          <button type="button" class="btn gradient-custom-2 text-white" onclick="tocart()">Go to the cart</button>
           <button type="button" class="btn btn-outline-danger" data-mdb-dismiss="modal">
-            Close
+            Continue Shoping
           </button>
         </div>
       </div>
