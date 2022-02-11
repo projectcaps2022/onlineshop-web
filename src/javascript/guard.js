@@ -5,6 +5,7 @@ if(!search){
  window.location = "./src/html/login.html";
 }else{
   var email = atob(search.split("=")[1])
+  localStorage.removeItem('user') 
   localStorage.setItem('user',email) 
 }
 

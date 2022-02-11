@@ -5,6 +5,7 @@ if(!search){
  window.location = "../html/login.html";
 }else{
   var email = atob(search.split("=")[1])
+  localStorage.removeItem('user') 
   localStorage.setItem('user',email) 
 }
 
@@ -12,9 +13,9 @@ if(!search){
 function getItemsCart (isenabled=false) {
  
  
-  // const prodmod = document.getElementById('loadingprods')
-  // const modalp = new mdb.Modal(prodmod)
-  // modalp.show()
+  const prodmod = document.getElementById('loadingprods')
+  const modalp = new mdb.Modal(prodmod)
+  modalp.show()
    
     let users = localStorage.getItem('user')
     var badge = document.getElementById('badgecart');
@@ -43,11 +44,13 @@ function getItemsCart (isenabled=false) {
 
                     }
                    }
+                   localStorage.removeItem('usercart')
                    localStorage.setItem('usercart', JSON.stringify(cart))
                    badge.innerHTML = cart.length
                    if(isenabled){
                     buildProds()
                    }
+                   modalp.hide()
               }
            )
          
@@ -67,7 +70,7 @@ function getItemsCart (isenabled=false) {
 
   for (let index = 0; index < items.length; index++) {
     const element = items[index];
-    localStorage.setItem(element[0], element)
+    localStorage.setItem(element[0], JSON.stringify(element))
   text+='  <div class="row">'+
   '<div class="col-lg-3 col-md-12 mb-4 mb-lg-0">'+
     '<!-- Image -->'+
@@ -164,9 +167,53 @@ function getItemsCart (isenabled=false) {
  }
 
  function removeitem(item) {
-  getItemsCart(true)
+  
+  var data = JSON.parse(localStorage.getItem(item))
+  var form = new FormData();
+
+  const prodmoda = document.getElementById('deleting')
+  const modalpa = new mdb.Modal(prodmoda)
+  modalpa.show()
+
+    form.append('Id_prod', parseInt(data[0]))
+    form.append('Confirmed', "Canceled")
+    form.append('Quantity', data[2])
+    form.append('Size', data[3])
+    form.append('action', 'delete')
+    form.append('User', data[4])
+    form.append('Name', data[6])
+    form.append('Category', data[7])
+    form.append('Type', data[8])
+    form.append('Description', data[9])
+    form.append('Color', data[10])
+    form.append('Image', data[11])
+    form.append('Rating', data[12])
+    form.append('prize', '$'+data[13])
+    form.append('Id_Producto', data[14])
+    form.append('Part', data[15])
+    form.append('imageB64', data[16])
+
+    let url = "https://script.google.com/macros/s/AKfycbwSLx5Ocjr5NJOQwWSjc_hBWhoNPluDEGl5VR33gPfdS3pfq2sQXnQbmVwdmFczvqlX2Q/exec"
+    //const form = document.getElementById('form-register');
+    var a = null
+    
+           fetch(url, {
+            method: 'POST',
+            body: form
+          }).then((response) => {
+            a = response.clone()
+            //console.log(a);
+            a.json().then((data)=>{
+                console.log('data', data)
+                getItemsCart(true)
+                modalpa.hide()
+            })
+          })
+  //console.log()
+  //getItemsCart(true)
  
   
 }
+
 
 
