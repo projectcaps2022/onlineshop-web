@@ -17,36 +17,39 @@
     <!-- MDB -->
     <link rel="stylesheet" href="../css/mdb.min.css" />
     <link rel="stylesheet" href="../css/custom.css" />
+    <link rel="stylesheet" href="../css/custombackground.css" />
   </head>
-  <body>
+  <body class="imghtml">
 
-<section class="h-100 gradient-form" style="background-color: #eee;">
+<section class="h-100 gradient-form">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-xl-10">
-          <div class="card rounded-3 text-black">
+        <div class="col-xl-6">
+          <div class="card rounded-3 text-black" style="background-color: rgb(0,0,0);
+          background-color: rgba(0,0,0, 0.4);
+          ">
             <div class="row g-0">
-              <div class="col-lg-6">
+              <div class="">
                 <div class="card-body p-md-5 mx-md-4">
   
                   <div class="text-center">
-                    <img src="https://th.bing.com/th/id/OIP.vS3NMVRHkWQ7QH7-9ZZ0NwHaHa?pid=ImgDet&rs=1" style="width: 185px;" alt="logo">
-                    <h4 class="mt-1 mb-5 pb-1">Online Shopping</h4>
+                    <img class="rounded-circle" src="https://th.bing.com/th/id/OIP.vS3NMVRHkWQ7QH7-9ZZ0NwHaHa?pid=ImgDet&rs=1" style="width: 185px;" alt="logo">
+                    <h4 class="mt-1 mb-5 pb-1 text-white">Online Shopping</h4>
                   </div>
   
                   <form class="needs-validation" id="logform">
-                    <p>Please login to your account</p>
+                    <p class="text-white">Please login to your account</p>
   
                     <div class="form-outline mb-4">
                       <input type="email" id="LogEmail" class="form-control" placeholder="Username" required/>
-                      <label class="form-label" for="LogEmail">Username</label>
-                      <div class="invalid-feedback">Please choose a username.</div>
+                      <label class="form-label text-white" for="LogEmail">Username</label>
+                      <div class="invalid-feedback text-white">Please choose a username.</div>
                     </div>
   
                     <div class="form-outline mb-4">
                       <input type="password" id="LogPassword" class="form-control" required/>
-                      <label class="form-label" for="LogPassword">Password</label>
-                      <div class="invalid-feedback">Please choose a password.</div>
+                      <label class="form-label text-white" for="LogPassword">Password</label>
+                      <div class="invalid-feedback text-white">Please choose a password.</div>
                     </div>
   
                     <div class="text-center pt-1 mb-5 pb-1">
@@ -55,7 +58,7 @@
                     </div>
   
                     <div class="d-flex align-items-center justify-content-center pb-4">
-                      <p class="mb-0 me-2">Don't have an account?</p>
+                      <p class="mb-0 me-2 text-white">Don't have an account?</p>
                       <button type="button" class="btn btn-outline-danger" data-mdb-toggle="modal" data-mdb-target="#exampleModal">Create new</button>
                     </div>
   
@@ -63,12 +66,12 @@
   
                 </div>
               </div>
-              <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+              <!-- <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
                 <div class="text-white px-3 py-4 p-md-5 mx-md-4">
                   <h4 class="mb-4">We are more than just a company</h4>
                   <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
