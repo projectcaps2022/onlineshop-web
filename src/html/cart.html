@@ -49,7 +49,10 @@
             <a class="nav-link" href="#">Cart</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">My Orders</a>
+            <a id="orders" class="nav-link" href="#">My Orders</a>
+            <script>
+              document.getElementById("orders").href = "./orders.html?user=" + btoa(localStorage.getItem('user'))
+            </script>
           </li>
         </ul>
         <!-- Left links -->
