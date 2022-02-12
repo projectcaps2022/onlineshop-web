@@ -19,7 +19,7 @@ function getproductsWoman(){
 
           var text = ''
             a.json().then((data) => {
-                    console.log(data)
+                    //console.log(data)
                     //var products = []
                     var texthtmlprod = ''
                     const divproduct = document.getElementById("productlist")

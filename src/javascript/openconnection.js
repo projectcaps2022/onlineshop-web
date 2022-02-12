@@ -17,7 +17,7 @@ var rs = new ActiveXObject("ADODB.Recordset");
 }
 rs.Open("SELECT * FROM test_azure", connection);
 
-console.log(rs);
+//console.log(rs);
 
 rs.MoveFirst;
 var text = '';
@@ -42,7 +42,7 @@ function settest(id,created_at,updated_at){
     id = document.getElementById(id).value;
     created_at = document.getElementById(created_at).value;
     updated_at = document.getElementById(updated_at).value;
-    console.log(id,created_at,updated_at);
+    //console.log(id,created_at,updated_at);
     var connectionstring="Data Source=onlineshops.database.windows.net;Initial Catalog=onlineshopdb;User ID=sqldeveloper;Password=ThisIsMyPassword97;Provider=SQLOLEDB";
         
     connection.Open(connectionstring);
@@ -54,12 +54,12 @@ function settest(id,created_at,updated_at){
     }
     try{
         var query = "Insert into test_azure(id,created_at,updated_at) values ("+id+",'"+created_at+"','"+updated_at+"')"
-        console.log(query)
+        //console.log(query)
     rs.Open(query, connection);
     }catch(err){
         alert(err.message);
     }
-    console.log(rs);
+    //console.log(rs);
 
     //rs.close;
     connection.close;
@@ -87,7 +87,7 @@ function deletetestd(id){
     }catch(err){
         document.getElementById("result").innerHTML = err.message;
     }
-    console.log(rs);
+    //console.log(rs);
 
   //  rs.close;
     connection.close; 
@@ -128,7 +128,7 @@ function testXMLREQUEST(){
 
     xhr.onload = function() {
         
-        console.log(xhr.response);
+        //console.log(xhr.response);
     document.getElementById('result').innerHTML = (xhr.response);
 
       };
@@ -160,7 +160,7 @@ function getData() {
 
           var text = ''
             a.json().then((data) => {
-                    console.log(data)
+                    //console.log(data)
                 for (let index = 1; index < data.row.length; index++) {
                     const element = data.row[index];
                     text+='<p> Date: '+ element[0]+' , Email: '+ element[1]+' Name: '+element[2]+' </p> <input type="button" value="deltete item: '+element[2]+'" onclick="deletetest('+"'"+element[1]+"'"+')" text="delete item">';
@@ -189,14 +189,14 @@ function deletetest(email) {
 
 
         const data = new FormData(form);
-          console.log(data);
+          //console.log(data);
           const action = 'https://script.google.com/macros/s/AKfycbwo5ox7DOnJ-61N10M0TWPxbp4zPYZDoYuwTDdjTcYqiRYKFNs_MlqNmt97p8fR87Z5/exec';
            fetch(action, {
             method: 'POST',
             body: data,
           })
           .then((response) => {
-            console.log(response.text())
+            //console.log(response.text())
             alert("Success!");
             getData()
             document.getElementsByName('email').setAttribute("name","insert");

@@ -8,7 +8,7 @@ function showcart(product=null){
 
     var select = document.getElementById('sizeselect').value
 
-    //console.log(quantity);
+    ////console.log(quantity);
 
     form.append('Confirmed', "Pending")
     form.append('Quantity', quantity)
@@ -36,9 +36,9 @@ function showcart(product=null){
             body: form
           }).then((response) => {
             a = response.clone()
-            console.log(a);
+            //console.log(a);
             a.json().then((data)=>{
-                console.log('data', data)
+                //console.log('data', data)
                 getItemsCart2()
                 const modalCaartContent = document.getElementById('exampleSideModal1')
           const modalCart = new mdb.Modal(modalCaartContent)

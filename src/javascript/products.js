@@ -20,7 +20,7 @@ function getproducts(){
 
           var text = ''
             a.json().then((data) => {
-                    console.log(data)
+                    //console.log(data)
                     //var products = []
                     var texthtmlprod = ''
                     const divproduct = document.getElementById("productlist")
@@ -96,7 +96,7 @@ function filterBy(object,type){
 function showdetails(element,fromtop=false){
    var tocart = element
    var element = JSON.parse(localStorage.getItem(element))
-   console.log(element);
+   //console.log(element);
 
    var strArray = element[5].split("/");
   
@@ -162,16 +162,16 @@ function showdetails(element,fromtop=false){
 function hidemodal() {
    const detailsa = document.getElementById('prodid')
    const modaldetaila = new mdb.Modal(detailsa)
-   console.log(modaldetaila)
+   //console.log(modaldetaila)
    modaldetaila.hide()
-   console.log(modaldetaila)
+   //console.log(modaldetaila)
 
 }
 
 function setvalueP(price){
 
    var inputq = document.getElementById('typeNumber').value
-   console.log(price*inputq)
+   //console.log(price*inputq)
    var pricech = document.getElementById("priceh").innerHTML = "$"+Number.parseFloat(price*inputq).toFixed(2)
 
 }
@@ -196,7 +196,7 @@ function getproductsMain(){
 
          var text = ''
            a.json().then((data) => {
-                   console.log(data)
+                   //console.log(data)
                    //var products = []
                    var texthtmlprod = ''
                    const divproduct = document.getElementById("productlist")

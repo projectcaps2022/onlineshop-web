@@ -69,7 +69,7 @@ formData.append('imageB64', ImagenB64);
     //const form = document.getElementById('form-register');
     
     
-            console.log(formData);
+            //console.log(formData);
            fetch(url, {
             method: 'POST',
             body: formData,
@@ -82,7 +82,7 @@ formData.append('imageB64', ImagenB64);
             a = response.clone()
             a.json().then((data)=>{
 
-                console.log('data', data)
+                //console.log('data', data)
                 
             })
           })

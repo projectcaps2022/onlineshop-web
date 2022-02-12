@@ -1,5 +1,5 @@
 let search = window.location.search
-console.log(search)
+//console.log(search)
 
 if(!search){
  window.location = "./src/html/login.html";
@@ -19,7 +19,7 @@ function getItemsCart () {
    
     let users = localStorage.getItem('user')
     var badge = document.getElementById('badgecart');
-    //console.log(users);
+    ////console.log(users);
    let url = "https://script.google.com/macros/s/AKfycbxvQT_14qkxm2eZt7Y6qtn_r5klZrbhIBfgyKr9sbqxGswvpBsCMjmj4bqbwBxUrRygaA/exec"
  
    var a ;  
@@ -33,7 +33,7 @@ function getItemsCart () {
  
          var text = ''
            a.json().then((data) => {
-                 //  console.log(data)
+                 //  //console.log(data)
                    var cart = []
 
                    for (let index = 0; index < data.row.length; index++) {

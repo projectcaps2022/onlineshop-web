@@ -9,7 +9,7 @@ function getOrders (isenabled=false) {
      
       let users = localStorage.getItem('user')
      
-      //console.log(users);
+      ////console.log(users);
      let url = "https://script.google.com/macros/s/AKfycbxvQT_14qkxm2eZt7Y6qtn_r5klZrbhIBfgyKr9sbqxGswvpBsCMjmj4bqbwBxUrRygaA/exec"
    
      var a ;  
@@ -23,7 +23,7 @@ function getOrders (isenabled=false) {
    
            var text = ''
              a.json().then((data) => {
-                   //  console.log(data)
+                   //  //console.log(data)
                      var cart = []
   
                      for (let index = 0; index < data.row.length; index++) {
@@ -38,7 +38,7 @@ function getOrders (isenabled=false) {
                      var temp_arr = [];
                    
                          var elemnetdif = cart[0];
-                         console.log(cart);
+                         //console.log(cart);
                      for (let split = 0; split < cart.length; split++) {
                          
                          var element = cart[split];
@@ -107,7 +107,7 @@ function getOrders (isenabled=false) {
                        }
                        var date = new Date(array_tot[rec][0][5]);
                        totalcart+=total
-                       console.log(textcard);
+                       //console.log(textcard);
                        totaltext+= 
                        '<div id="orders" class="card-body p-4">'+
                            '<div class="d-flex justify-content-between align-items-center mb-4">'+
@@ -151,7 +151,7 @@ function getOrders (isenabled=false) {
                              '  Total paid: <span id="totalp" class="h2 mb-0 ms-2">$'+parseFloat(totalcart).toFixed(2)+'</span></h5>'+
                        '</div>'+
                        '</div>'
-                     //console.log(array_tot);
+                     ////console.log(array_tot);
                        modalord.hide()
 
                      document.getElementById('fill').style.opacity = 0

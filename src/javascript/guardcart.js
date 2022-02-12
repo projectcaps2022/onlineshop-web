@@ -1,5 +1,5 @@
 let search = window.location.search
-console.log(search)
+//console.log(search)
 
 if(!search){
  window.location = "../html/login.html";
@@ -19,7 +19,7 @@ function getItemsCart (isenabled=false) {
    
     let users = localStorage.getItem('user')
     var badge = document.getElementById('badgecart');
-    //console.log(users);
+    ////console.log(users);
    let url = "https://script.google.com/macros/s/AKfycbxvQT_14qkxm2eZt7Y6qtn_r5klZrbhIBfgyKr9sbqxGswvpBsCMjmj4bqbwBxUrRygaA/exec"
  
    var a ;  
@@ -33,7 +33,7 @@ function getItemsCart (isenabled=false) {
  
          var text = ''
            a.json().then((data) => {
-                 //  console.log(data)
+                 //  //console.log(data)
                    var cart = []
 
                    for (let index = 0; index < data.row.length; index++) {
@@ -68,7 +68,7 @@ function getItemsCart (isenabled=false) {
    
     let users = localStorage.getItem('user')
     var badge = document.getElementById('badgecart');
-    //console.log(users);
+    ////console.log(users);
    let url = "https://script.google.com/macros/s/AKfycbxvQT_14qkxm2eZt7Y6qtn_r5klZrbhIBfgyKr9sbqxGswvpBsCMjmj4bqbwBxUrRygaA/exec"
  
    var a ;  
@@ -82,7 +82,7 @@ function getItemsCart (isenabled=false) {
  
          var text = ''
            a.json().then((data) => {
-                 //  console.log(data)
+                 //  //console.log(data)
                    var cart = []
 
                    for (let index = 0; index < data.row.length; index++) {
@@ -115,7 +115,7 @@ function getItemsCart (isenabled=false) {
  var text = ''
   var items = JSON.parse(localStorage.getItem('usercart'))
   var total = 0;
-  console.log(items);
+  //console.log(items);
   var cuant = []
   if(!items.length){
     text = 'No items in the cart yet'
@@ -176,7 +176,7 @@ function getItemsCart (isenabled=false) {
     total += element[2]*element[13]
   }
 
-   // console.log(text);
+   // //console.log(text);
     
     var divproduct = document.getElementById('itembody')
     divproduct.style.opacity = 0;
@@ -197,7 +197,7 @@ function getItemsCart (isenabled=false) {
 
  function updateprice(){
      var doc =   document.getElementById('pricestd');
-     console.log(doc);
+     //console.log(doc);
  }
 
  function countprice(item=null) {
@@ -208,14 +208,14 @@ function getItemsCart (isenabled=false) {
    for (let index = 0; index < strongs.length; index++) {
      
     var strNotParsed = strongs[index].innerText;
-   // console.log();
-    // console.log(parseFloat(inputs[index].value));
+   // //console.log();
+    // //console.log(parseFloat(inputs[index].value));
      total+= parseFloat(strNotParsed.replace('$','')) * parseFloat(inputs[index].value)
    }
-   //console.log(total);
+   ////console.log(total);
    document.getElementById('pricetotal').innerHTML = '$'+Number.parseFloat(total).toFixed(2)
 
-  // console.log(inputs);
+  // //console.log(inputs);
  }
 
  function removeitem(item) {
@@ -254,14 +254,14 @@ function getItemsCart (isenabled=false) {
             body: form
           }).then((response) => {
             a = response.clone()
-            //console.log(a);
+            ////console.log(a);
             a.json().then((data)=>{
-                console.log('data', data)
+                //console.log('data', data)
                 getItemsCart(true)
                 modalpa.hide()
             })
           })
-  //console.log()
+  ////console.log()
   //getItemsCart(true)
  
   
@@ -322,7 +322,7 @@ function checkout() {
 
   items.push(arr);
 }
-console.log(JSON.stringify(items))
+//console.log(JSON.stringify(items))
 form.append('action', 'update')
 form.append('data', JSON.stringify(items))
 
@@ -337,9 +337,9 @@ form.append('data', JSON.stringify(items))
             body: form
           }).then((response) => {
             a = response.clone()
-            //console.log(a);
+            ////console.log(a);
             a.json().then((data)=>{
-                console.log('data', data)
+                //console.log('data', data)
                 itembod.innerHTML = '<p style="color: green;"> All products are payed succefully. See My Order for more info </p>'
                 setTimeout(function(){ 
                   modalpae.hide()

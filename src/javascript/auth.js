@@ -27,7 +27,7 @@ function login(){
 
           var text = ''
             a.json().then((data) => {
-                    console.log(data)
+                    //console.log(data)
                     let username = document.getElementById("LogEmail").value
                     let password = document.getElementById("LogPassword").value
 
@@ -35,7 +35,7 @@ function login(){
                         const element = data.row[index];
                         
                         if(element[2]===username && element[4]===password){
-                            console.log('same')
+                            //console.log('same')
                             
                             window.location = '../../index.html?user='+btoa(username);
                             
@@ -45,9 +45,9 @@ function login(){
                        
                         
                     }
-                    console.log('unsame')
+                    //console.log('unsame')
                     document.getElementById("divbody").innerHTML = '<p class="text-center" style="color: #E20A0A;">Wrong username or password! Please retry.</p>'
-                    console.log(username,password)
+                    //console.log(username,password)
 
                }
             )
@@ -83,7 +83,7 @@ function register(){
     document.getElementById("divbodyreg").innerHTML =text
     var a;
     modal.show()
-            console.log(data);
+            //console.log(data);
            fetch(url, {
             method: 'POST',
             body: data,
@@ -92,7 +92,7 @@ function register(){
             a = response.clone()
             a.json().then((data)=>{
 
-                console.log('data', data)
+                //console.log('data', data)
                 if(data.result==='success'){
                     text = '<p class="text-center" style="color: #068D05;">Successfully registered user!! </p>'
                     document.getElementById("divbodyreg").innerHTML =text
