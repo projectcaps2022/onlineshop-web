@@ -200,10 +200,15 @@
                 </div>
               </div>
             </div>
+            <script>
+              function tocart() {
+                window.location = './cart.html?user='+btoa( localStorage.getItem('user'));
+              }
+            </script>
             <div class="modal-footer">
-              <button type="button" class="btn gradient-custom-2 text-white">Go to the cart</button>
+              <button type="button" class="btn gradient-custom-2 text-white" onclick="tocart()">Go to the cart</button>
               <button type="button" class="btn btn-outline-danger" data-mdb-dismiss="modal">
-                Close
+                Continue shoping
               </button>
             </div>
           </div>
@@ -250,9 +255,9 @@
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn gradient-custom-2 text-white">Go to the cart</button>
+              <button type="button" class="btn gradient-custom-2 text-white" onclick="tocart()">Go to the cart</button>
               <button type="button" class="btn btn-outline-danger" data-mdb-dismiss="modal">
-                Close
+                Continue shoping
               </button>
             </div>
           </div>

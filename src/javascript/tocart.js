@@ -39,7 +39,7 @@ function showcart(product=null){
             console.log(a);
             a.json().then((data)=>{
                 console.log('data', data)
-                getItemsCart()
+                getItemsCart2()
                 const modalCaartContent = document.getElementById('exampleSideModal1')
           const modalCart = new mdb.Modal(modalCaartContent)
           modalCart.show()

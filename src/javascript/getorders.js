@@ -129,7 +129,6 @@ function getOrders (isenabled=false) {
                        
                            '<div class="d-flex justify-content-between">'+
                               ' <p class="text-muted mb-0">Invoice Date : '+date.toDateString()+'</p>'+
-                             '  <p class="text-muted mb-0"><span class="fw-bold me-4">GST 18%</span> 0</p>'+
                          '  </div>'+
                        
                           ' <div class="d-flex justify-content-between mb-5">'+

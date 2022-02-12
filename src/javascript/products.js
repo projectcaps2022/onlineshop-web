@@ -49,7 +49,7 @@ function getproducts(){
                        const element = data.row[index];
                        var strArray = element[5].split("/");
                        localStorage.setItem(element[8], JSON.stringify(element))
-                       texthtmlprod+= '<div class="col"><div class="card text-black h-100"><img src="'+''+element[10]+'" class="card-img-top hover-shadow" alt="..." onclick="showdetails('+element[8]+',true)" /> <div class="card-body"> <div class="text-center">'+
+                       texthtmlprod+= '<div class="col"><div class="card text-black h-100"><img src="'+''+element[10]+'" class="card-img-top hover-shadow"  style="height: 415px" alt="..." onclick="showdetails('+element[8]+',true)" /> <div class="card-body"> <div class="text-center">'+
                        '<h5 class="card-title">'+element[0]+'</h5>'+
                        '<p class="text-muted mb-4">'+element[3]+'</p>'
                      +'</div>'+
@@ -217,7 +217,7 @@ function getproductsMain(){
                       
                        localStorage.setItem(element[8], JSON.stringify(element))
 
-                       texthtmlprod+= '<div class="col"><div class="card text-black h-100"><img src="'+element[10]+'" class="card-img-top hover-shadow" alt="..." onclick="showdetails('+element[8]+')" /> <div class="card-body"> <div class="text-center">'+
+                       texthtmlprod+= '<div class="col"><div class="card text-black h-100"><img src="'+element[10]+'" class="card-img-top hover-shadow" style="height: 415px" alt="..." onclick="showdetails('+element[8]+')" /> <div class="card-body"> <div class="text-center">'+
                              '<h5 class="card-title">'+element[0]+'</h5>'+
                              '<p class="text-muted mb-4">'+element[3]+'</p>'
                            +'</div>'+
