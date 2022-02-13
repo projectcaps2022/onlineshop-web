@@ -112,7 +112,6 @@ function getOrders (isenabled=false) {
                        '<div id="orders" class="card-body p-4">'+
                            '<div class="d-flex justify-content-between align-items-center mb-4">'+
                               ' <p class="lead fw-normal mb-0" style="color: #da5645;">Receipt Cart: '+(rec+1)+'</p>'+
-                               '<p class="small text-muted mb-0">Receipt Voucher : 1KAU9-84UIL</p>'+
                            '</div>'+
                            '<div id="fill">'+
                            textcard+
@@ -123,7 +122,7 @@ function getOrders (isenabled=false) {
                            '</div>'+
                        
                            '<div class="d-flex justify-content-between pt-2">'+
-                              ' <p class="text-muted mb-0">Invoice Number : 788152</p>'+
+                              ' <p class="text-muted mb-0">Invoice Number : '+date.getFullYear()+date.getMonth()+date.getDay()+date.getDay()+date.getHours()+date.getMinutes()+date.getSeconds()+'</p>'+
                                '<p class="text-muted mb-0"><span class="fw-bold me-4">Discount</span> $00.00</p>'+
                          '  </div>'+
                        
@@ -132,7 +131,6 @@ function getOrders (isenabled=false) {
                          '  </div>'+
                        
                           ' <div class="d-flex justify-content-between mb-5">'+
-                              ' <p class="text-muted mb-0">Recepits Voucher : 18KU-62IIK</p>'+
                                '<p class="text-muted mb-0"><span class="fw-bold me-4">Delivery Charges</span> Free</p>'+
                          '  </div>'+
                          '  <hr class="my-2" />'+
@@ -145,11 +143,7 @@ function getOrders (isenabled=false) {
                         '<div class="card-header px-4 py-5">'+
                             '<h5 class="text-muted mb-0">Thanks for your Order, <span id="users" style="color: #a8729a;">'+localStorage.getItem('user')+'</span>!</h5>'+
                         '</div>'+totaltext+
-                        '<div class="card-footer border-0 px-4 py-5 gradient-custom-2"'+
-                          ' style=" border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">'+
-                          ' <h5 class="d-flex align-items-center justify-content-end text-white text-uppercase mb-0">'+
-                             '  Total paid: <span id="totalp" class="h2 mb-0 ms-2">$'+parseFloat(totalcart).toFixed(2)+'</span></h5>'+
-                       '</div>'+
+                        
                        '</div>'
                      ////console.log(array_tot);
                        modalord.hide()
